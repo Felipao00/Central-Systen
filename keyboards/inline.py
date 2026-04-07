@@ -1,0 +1,71 @@
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from config import GHOST_USERNAME, TIO_DUCK_USERNAME, GHOST_SERVICES
+
+def main_menu_keyboard():
+    """Teclado principal do bot"""
+    keyboard = [
+        [InlineKeyboardButton("🛒 SERVIÇO ADQUIRIDO", callback_data='service_acquired')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def services_keyboard():
+    """Teclado de serviços disponíveis"""
+    keyboard = [
+        [InlineKeyboardButton("🔍 CONSULTAS", callback_data='consultas')],
+        [InlineKeyboardButton("💳 CARTÕES", callback_data='cards')],
+        [InlineKeyboardButton("🏡 VOLTAR", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def consultas_keyboard():
+    """Teclado de consultas - Ghost e Tio Duck"""
+    keyboard = [
+        [InlineKeyboardButton("📄 CPF", callback_data='service_CPF'),
+         InlineKeyboardButton("🏢 CNPJ", callback_data='service_CNPJ')],
+        [InlineKeyboardButton("📍 CEP", callback_data='service_CEP'),
+         InlineKeyboardButton("👤 NOME", callback_data='service_NOME')],
+        [InlineKeyboardButton("📱 TELEFONE", callback_data='service_TELEFONE'),
+         InlineKeyboardButton("🚗 PLACA", callback_data='service_PLACA')],
+        [InlineKeyboardButton("💳 BIN", callback_data='service_BIN'),
+         InlineKeyboardButton("🌐 IP", callback_data='service_IP')],
+        [InlineKeyboardButton("🏡 VOLTAR", callback_data='back_to_services')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def cards_keyboard():
+    """Teclado de serviços de cartão"""
+    keyboard = [
+        [InlineKeyboardButton("💳 Info CC S/Verificação", callback_data='card_no_verification')],
+        [InlineKeyboardButton("✅ Info CC Verificado", callback_data='card_verified')],
+        [InlineKeyboardButton("🏡 VOLTAR", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def specialist_keyboard(specialist_type, service_name, from_screen='main'):
+    """Teclado com botão para falar com especialista"""
+    if specialist_type == 'ghost':
+        url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
+        text = f"💬 FALAR COM ESPECIALISTA - {service_name}"
+    elif specialist_type == 'tio_duck':
+        url = f"https://t.me/{TIO_DUCK_USERNAME.replace('@', '')}"
+        text = f"💬 FALAR COM ESPECIALISTA - {service_name}"
+    else:
+        url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
+        text = f"💬 FALAR COM ESPECIALISTA - {service_name}"
+    
+    # Define para onde voltar baseado em de onde veio
+    if from_screen == 'consultas':
+        back_callback = 'back_to_consultas'
+        back_text = "🏡 RETORNAR"
+    elif from_screen == 'cards':
+        back_callback = 'back_to_cards'
+        back_text = "🏡 RETORNAR"
+    else:
+        back_callback = 'back_to_main'
+        back_text = "🏡 INÍCIO"
+    
+    keyboard = [
+        [InlineKeyboardButton(text, url=url)],
+        [InlineKeyboardButton(back_text, callback_data=back_callback)]
+    ]
+    return InlineKeyboardMarkup(keyboard)
