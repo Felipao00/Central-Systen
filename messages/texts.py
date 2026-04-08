@@ -26,24 +26,24 @@ def ghost_specialist_message(service):
     return f"""
 🔷 <b>SERVIÇO SELECIONADO: {service}</b> 🔷
 
-<blockquote><i>Para dar continuidade ao seu atendimento,</i>
+<blockquote><i>😁 Para dar continuidade ao seu atendimento,</i>
 <i>fale diretamente com nosso especialista.</i></blockquote>
 
-<blockquote><i>Ele irá processar sua solicitação rapidamente! ⚡</i></blockquote>
+<blockquote><i>⚡ Ele irá processar sua solicitação rapidamente!</i></blockquote>
 
-👇 <i>Clique no botão abaixo!</i> 👇
+<blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
 """
 
 def tio_duck_specialist_message(service):
     return f"""
 🔶 <b>SERVIÇO SELECIONADO: {service}</b> 🔶
 
-<blockquote><i>Para dar continuidade ao seu atendimento,</i>
+<blockquote><i>😁 Para dar continuidade ao seu atendimento,</i>
 <i>fale diretamente com nosso especialista.</i></blockquote>
 
-<blockquote><i>Ele irá processar sua solicitação rapidamente! ⚡</i></blockquote>
+<blockquote><i>⚡ Ele irá processar sua solicitação rapidamente!</i></blockquote>
 
-👇 <i>Clique no botão abaixo!</i> 👇
+<blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
 """
 
 def card_specialist_message(card_type):

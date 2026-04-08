@@ -32,18 +32,14 @@ async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
 🆘 <b>CENTRAL DE AJUDA</b>
 
-<b>Como funciona:</b>
-1️⃣ Escolha o tipo de serviço
-2️⃣ Selecione o serviço adquirido
-3️⃣ Fale com nosso especialista
+<blockquote><b>Como funciona:</b>
+1️⃣ <i>Escolha o tipo de serviço que você adquiriu no nosso site</i>
+2️⃣ <i>Selecione o serviço adquirido e envie todas as informações solicitadas</i>
+3️⃣ <i>Fale com nosso especialista para poder processar sua solicitação</i></blockquote>
 
-<b>Dúvidas frequentes:</b>
-⏱️ <i>Prazo de entrega:</i> Imediato após pagamento
-💳 <i>Formas de pagamento:</i> PIX, Cartão, Crypto
-📞 <i>Suporte:</i> Use /contato
-
-<b>Ghost:</b> CPF • CNPJ • CEP • NOME
-<b>Tio Duck:</b> TELEFONE • PLACA • BIN • IP
+<blockquote><b>Dúvidas frequentes:</b>
+⏱️ <b>Prazo de entrega:</b> <i>Imediato após pagamento</i>
+💳 <b>Forma de pagamento:</b> <i>Apenas PIX</i>
 """
     await update.message.reply_text(
         text=help_text,

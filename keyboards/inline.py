@@ -4,7 +4,7 @@ from config import GHOST_USERNAME, TIO_DUCK_USERNAME, GHOST_SERVICES
 def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
-        [InlineKeyboardButton("🛒 SERVIÇO ADQUIRIDO", callback_data='service_acquired')]
+        [InlineKeyboardButton("🛒 SERVIÇOS DISPONÍVEIS", callback_data='service_acquired')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -45,13 +45,13 @@ def specialist_keyboard(specialist_type, service_name, from_screen='main'):
     """Teclado com botão para falar com especialista"""
     if specialist_type == 'ghost':
         url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-        text = f"💬 FALAR COM ESPECIALISTA - {service_name}"
+        text = f"💬 FALAR COM ESPECIALISTA"
     elif specialist_type == 'tio_duck':
         url = f"https://t.me/{TIO_DUCK_USERNAME.replace('@', '')}"
-        text = f"💬 FALAR COM ESPECIALISTA - {service_name}"
+        text = f"💬 FALAR COM ESPECIALISTA"
     else:
         url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-        text = f"💬 FALAR COM ESPECIALISTA - {service_name}"
+        text = f"💬 FALAR COM ESPECIALISTA"
     
     # Define para onde voltar baseado em de onde veio
     if from_screen == 'consultas':
