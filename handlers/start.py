@@ -38,8 +38,8 @@ async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
 3️⃣ <i>Fale com nosso especialista para poder processar sua solicitação</i></blockquote>
 
 <blockquote><b>Dúvidas frequentes:</b>
-⏱️ <b>Prazo de entrega:</b> <i>Imediato após pagamento</i>
-💳 <b>Forma de pagamento:</b> <i>Apenas PIX</i>
+⏱️ <b>Prazo de entrega:</b> <i>Damos um prazo de até 24 a 48 horas úteis após o pagamento</i>
+💳 <b>Forma de pagamento:</b> <i>Apenas PIX</i></blockquote>
 """
     await update.message.reply_text(
         text=help_text,

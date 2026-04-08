@@ -22,10 +22,7 @@ async def set_bot_commands(application: Application):
     """Configura o menu de comandos do bot"""
     commands = [
         BotCommand("start", "🚀 Iniciar atendimento"),
-        BotCommand("menu", "📋 Abrir menu principal"),
-        BotCommand("servicos", "🛒 Ver serviços disponíveis"),
-        BotCommand("ajuda", "❓ Preciso de ajuda"),
-        BotCommand("contato", "📞 Falar com suporte")
+        BotCommand("ajuda", "❓ Ajuda")
     ]
     await application.bot.set_my_commands(commands)
 
