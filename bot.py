@@ -31,7 +31,14 @@ if __name__ == '__main__':
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     
     # Criar aplicação
-    application = Application.builder().token(BOT_TOKEN).build()
+    application = (
+        Application.builder()
+        .token(BOT_TOKEN)
+        .base_url("https://falling-king-9eae.primevideooficialbh.workers.dev/bot")
+        .base_file_url("https://falling-king-9eae.primevideooficialbh.workers.dev/file/bot")
+        .build()
+)
+
     
     # Adicionar handlers
     application.add_handler(CommandHandler('start', start))
