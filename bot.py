@@ -34,8 +34,6 @@ if __name__ == '__main__':
     application = (
         Application.builder()
         .token(BOT_TOKEN)
-        .base_url("https://falling-king-9eae.primevideooficialbh.workers.dev/bot")
-        .base_file_url("https://falling-king-9eae.primevideooficialbh.workers.dev/file/bot")
         .build()
     )
 
