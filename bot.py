@@ -37,7 +37,7 @@ if __name__ == '__main__':
         .base_url("https://falling-king-9eae.primevideooficialbh.workers.dev/bot")
         .base_file_url("https://falling-king-9eae.primevideooficialbh.workers.dev/file/bot")
         .build()
-)
+    )
 
     
     # Adicionar handlers
