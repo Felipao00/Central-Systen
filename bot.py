@@ -21,8 +21,7 @@ logging.basicConfig(
 async def set_bot_commands(application: Application):
     """Configura o menu de comandos do bot"""
     commands = [
-        BotCommand("start", "🚀 Iniciar atendimento"),
-        BotCommand("ajuda", "❓ Ajuda")
+        BotCommand("start", "🚀 Iniciar atendimento")
     ]
     await application.bot.set_my_commands(commands)
 
@@ -51,6 +50,15 @@ if __name__ == '__main__':
     application.add_handler(CallbackQueryHandler(handle_back_to_services, pattern='^back_to_services$'))
     application.add_handler(CallbackQueryHandler(handle_back_to_consultas, pattern='^back_to_consultas$'))
     application.add_handler(CallbackQueryHandler(handle_back_to_cards, pattern='^back_to_cards$'))
+    # Novos handlers do menu
+    application.add_handler(CallbackQueryHandler(handle_partners, pattern='^partners$'))
+    application.add_handler(CallbackQueryHandler(handle_help_menu, pattern='^help_menu$'))
+    application.add_handler(CallbackQueryHandler(handle_how_it_works, pattern='^how_it_works$'))
+    application.add_handler(CallbackQueryHandler(handle_deadlines, pattern='^deadlines$'))
+    application.add_handler(CallbackQueryHandler(handle_payments, pattern='^payments$'))
+    # Na seção de Callbacks, adicione:
+    application.add_handler(CallbackQueryHandler(handle_business_hours, pattern='^business_hours$'))
+    application.add_handler(CallbackQueryHandler(handle_rules, pattern='^rules$'))
     
     # Configurar menu de comandos
     application.post_init = set_bot_commands

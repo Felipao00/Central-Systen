@@ -4,7 +4,11 @@ from config import GHOST_USERNAME, TIO_DUCK_USERNAME, GHOST_SERVICES
 def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
-        [InlineKeyboardButton("🛒 Serviços Disponíveis", callback_data='service_acquired')]
+        [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
+        [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
+         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')],
+        [InlineKeyboardButton("⏰ Horários", callback_data='business_hours'),
+         InlineKeyboardButton("📖 Regras", callback_data='rules')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -53,7 +57,50 @@ def specialist_keyboard(specialist_type, service_name, from_screen='main'):
         url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
         text = f"💬 Falar com Especialista"
     
-    # Define para onde voltar baseado em de onde veio
+    if from_screen == 'consultas':
+        back_callback = 'back_to_consultas'
+        back_text = "🏠 Voltar"
+    elif from_screen == 'cards':
+        back_callback = 'back_to_cards'
+        back_text = "🏠 Voltar"
+    else:
+        back_callback = 'back_to_main'
+        back_text = "🏠 início"
+    
+    keyboard = [
+        [InlineKeyboardButton(text, url=url)],
+        [InlineKeyboardButton(back_text, callback_data=back_callback)]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def partners_keyboard():
+    """Teclado da área de parceiros"""
+    keyboard = [
+        [InlineKeyboardButton("💳 Gateway", url="https://t.me/pibankofc_bot")],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def help_menu_keyboard():
+    """Teclado do menu de ajuda"""
+    keyboard = [
+        [InlineKeyboardButton("📋 Como Funciona", callback_data='how_it_works')],
+        [InlineKeyboardButton("⏱️ Prazos", callback_data='deadlines')],
+        [InlineKeyboardButton("💳 Pagamentos", callback_data='payments')],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def help_back_keyboard():
+    """Teclado para voltar ao menu de ajuda"""
+    keyboard = [
+        [InlineKeyboardButton("🏡 Retornar", callback_data='help_menu')],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def out_of_hours_keyboard(from_screen='main'):
+    """Teclado para quando está fora do horário"""
     if from_screen == 'consultas':
         back_callback = 'back_to_consultas'
         back_text = "🏠 Retornar"
@@ -63,9 +110,5 @@ def specialist_keyboard(specialist_type, service_name, from_screen='main'):
     else:
         back_callback = 'back_to_main'
         back_text = "🏠 Início"
-    
-    keyboard = [
-        [InlineKeyboardButton(text, url=url)],
-        [InlineKeyboardButton(back_text, callback_data=back_callback)]
-    ]
+    keyboard = [[InlineKeyboardButton(back_text, callback_data=back_callback)]]
     return InlineKeyboardMarkup(keyboard)

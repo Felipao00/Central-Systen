@@ -8,22 +8,23 @@ from .services import (
     handle_back_to_main,
     handle_back_to_services,
     handle_back_to_consultas,
-    handle_back_to_cards
+    handle_back_to_cards,
+    handle_partners,
+    handle_help_menu,
+    handle_how_it_works,
+    handle_deadlines,
+    handle_payments,
+    handle_business_hours,  # NOVO
+    handle_rules            # NOVO
 )
 
 __all__ = [
-    'start',
-    'menu',
-    'servicos',
-    'ajuda',
-    'contato',
-    'handle_service_acquired',
-    'handle_consultas',
-    'handle_cards',
-    'handle_service_selection',
-    'handle_card_selection',
-    'handle_back_to_main',
-    'handle_back_to_services',
-    'handle_back_to_consultas',
-    'handle_back_to_cards'
+    'start', 'menu', 'servicos', 'ajuda', 'contato',
+    'handle_service_acquired', 'handle_consultas', 'handle_cards',
+    'handle_service_selection', 'handle_card_selection',
+    'handle_back_to_main', 'handle_back_to_services',
+    'handle_back_to_consultas', 'handle_back_to_cards',
+    'handle_partners', 'handle_help_menu', 'handle_how_it_works',
+    'handle_deadlines', 'handle_payments',
+    'handle_business_hours', 'handle_rules'
 ]
