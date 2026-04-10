@@ -37,7 +37,18 @@ def ghost_specialist_message(service):
 
 <blockquote><i>⚡ Ele irá processar sua solicitação rapidamente!</i></blockquote>
 
-<blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
+<blockquote>👀 <b>Obs</b>: <i>Após você entrar em contato, é importante que você envie o PRINT da compra e forneça as informações solicitadas abaixo.</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+📄 <b>Serviço:</b> {service}
+🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
+📝 <b>Dados para consulta:</b> <i>Informações necessárias</i></blockquote>
+
+👇 <b>Clique no botão abaixo para falar com o especialista:</b>
 """
 
 def tio_duck_specialist_message(service):
@@ -49,7 +60,18 @@ def tio_duck_specialist_message(service):
 
 <blockquote><i>⚡ Ele irá processar sua solicitação rapidamente!</i></blockquote>
 
-<blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
+<blockquote>👀 <b>Obs</b>: <i>Após você entrar em contato, é importante que você envie o PRINT da compra e forneça as informações solicitadas abaixo.</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>TIO DUCK</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+📄 <b>Serviço:</b> {service}
+🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
+📝 <b>Dados para consulta:</b> <i>Informações necessárias</i></blockquote>
+
+👇 <b>Clique no botão abaixo para falar com o especialista:</b>
 """
 
 def card_specialist_message(card_type):
@@ -61,7 +83,18 @@ def card_specialist_message(card_type):
 
 <blockquote><i>⚡ Ele irá processar sua solicitação rapidamente!</i></blockquote>
 
-<blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
+<blockquote>👀 <b>Obs</b>: <i>Após você entrar em contato, é importante que você envie o PRINT da compra e forneça as informações solicitadas abaixo.</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+💳 <b>Serviço:</b> {card_type}
+🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
+📝 <b>Dados do cartão:</b> <i>BIN e informações solicitadas</i></blockquote>
+
+👇 <b>Clique no botão abaixo para falar com o especialista:</b>
 """
 
 PARTNERS_MESSAGE = """
@@ -226,6 +259,15 @@ def claro_message():
 🎁 <i>A cada R$ 30,00 em recargas, ganhe 1GB de bônus!</i>
 
 ━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+📱 <b>Serviço:</b> <i>Recarga CLARO</i>
+🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
+📞 <b>Número:</b> <i>Com DDD (ex: 11 99999-9999)</i>
+💰 <b>Valor:</b> <i>R$ 25, 30, 35, 40, 50, 60 ou 100</i></blockquote>
+
 ⚠️ <i>Recarga válida para todo Brasil</i>
 
 👇 <b>Clique abaixo para falar com o especialista:</b>
@@ -248,6 +290,15 @@ def tim_message():
 🎁 <i>Recargas acima de R$ 30 ganham TIM Banca ilimitada!</i>
 
 ━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+📱 <b>Serviço:</b> <i>Recarga TIM</i>
+🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
+📞 <b>Número:</b> <i>Com DDD (ex: 11 99999-9999)</i>
+💰 <b>Valor:</b> <i>R$ 20 ou R$ 30</i></blockquote>
+
 ⚠️ <i>Recarga válida para todo Brasil</i>
 
 👇 <b>Clique abaixo para falar com o especialista:</b>
@@ -270,6 +321,15 @@ def vivo_message():
 🎁 <i>VIVO Turbo: 2x mais internet nas recargas!</i>
 
 ━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+📱 <b>Serviço:</b> <i>Recarga VIVO</i>
+🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
+📞 <b>Número:</b> <i>Com DDD (ex: 11 99999-9999)</i>
+💰 <b>Valor:</b> <i>R$ 20, R$ 25 ou R$ 30</i></blockquote>
+
 ⚠️ <i>Recarga válida para todo Brasil</i>
 
 👇 <b>Clique abaixo para falar com o especialista:</b>
