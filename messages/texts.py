@@ -290,3 +290,28 @@ BUSINESS_HOURS_MESSAGE = """
 
 <i>Qualquer dúvida, fale com nosso suporte!</i>
 """
+
+# Adicione no final do arquivo:
+
+OUT_OF_HOURS_MESSAGE = """
+😴 <b>FORA DO HORÁRIO DE FUNCIONAMENTO</b> 😴
+
+Nossa equipe está descansando no momento!
+
+<b>📅 Hoje é {current_day}</b>
+<b>🕐 Hora atual:</b> {current_time} (Brasília)
+
+<b>⏰ Nosso horário de atendimento:</b>
+{business_hours}
+
+━━━━━━━━━━━━━━━━━━
+✅ <b>Sua solicitação foi registrada!</b>
+
+Assim que estivermos online, um especialista 
+entrará em contato para atendê-lo.
+
+💡 <i>Volte durante nosso horário de 
+funcionamento para atendimento imediato!</i>
+
+👇 <i>Você pode consultar nossos horários no menu principal.</i>
+"""

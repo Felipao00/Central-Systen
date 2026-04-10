@@ -144,3 +144,26 @@ def recharge_specialist_keyboard(operator, from_screen='recharges'):
         [InlineKeyboardButton(back_text, callback_data=back_callback)]
     ]
     return InlineKeyboardMarkup(keyboard)
+
+# Adicione no final do arquivo:
+
+def out_of_hours_keyboard(from_screen='main'):
+    """Teclado para quando está fora do horário"""
+    if from_screen == 'consultas':
+        back_callback = 'back_to_consultas'
+        back_text = "🔙 VOLTAR PARA CONSULTAS"
+    elif from_screen == 'cards':
+        back_callback = 'back_to_cards'
+        back_text = "🔙 VOLTAR PARA CARTÕES"
+    elif from_screen == 'recharges':
+        back_callback = 'recharges'
+        back_text = "🔙 VOLTAR PARA RECARGAS"
+    else:
+        back_callback = 'back_to_main'
+        back_text = "🔙 MENU PRINCIPAL"
+    
+    keyboard = [
+        [InlineKeyboardButton("⏰ VER HORÁRIOS", callback_data='business_hours')],
+        [InlineKeyboardButton(back_text, callback_data=back_callback)]
+    ]
+    return InlineKeyboardMarkup(keyboard)

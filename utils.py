@@ -1,9 +1,9 @@
 from datetime import datetime
-import pytz
+from zoneinfo import ZoneInfo
 
 def is_business_hours():
     """Verifica se está no horário de funcionamento (Horário de Brasília)"""
-    brasilia_tz = pytz.timezone('America/Sao_Paulo')
+    brasilia_tz = ZoneInfo("America/Sao_Paulo")
     now = datetime.now(brasilia_tz)
     
     weekday = now.weekday()  # 0 = Segunda, 6 = Domingo
@@ -36,7 +36,7 @@ def is_business_hours():
 
 def get_business_hours_message():
     """Retorna mensagem personalizada para fora de horário"""
-    brasilia_tz = pytz.timezone('America/Sao_Paulo')
+    brasilia_tz = ZoneInfo("America/Sao_Paulo")
     now = datetime.now(brasilia_tz)
     weekday = now.weekday()
     
@@ -47,6 +47,23 @@ def get_business_hours_message():
 
 def get_current_time_brasilia():
     """Retorna hora atual de Brasília formatada"""
-    brasilia_tz = pytz.timezone('America/Sao_Paulo')
+    brasilia_tz = ZoneInfo("America/Sao_Paulo")
     now = datetime.now(brasilia_tz)
     return now.strftime("%H:%M")
+
+def get_current_day_brasilia():
+    """Retorna dia da semana atual em português"""
+    brasilia_tz = ZoneInfo("America/Sao_Paulo")
+    now = datetime.now(brasilia_tz)
+    
+    days = {
+        0: "Segunda-feira",
+        1: "Terça-feira",
+        2: "Quarta-feira",
+        3: "Quinta-feira",
+        4: "Sexta-feira",
+        5: "Sábado",
+        6: "Domingo"
+    }
+    
+    return days[now.weekday()]
