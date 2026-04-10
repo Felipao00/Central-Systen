@@ -54,11 +54,11 @@ def specialist_keyboard(specialist_type, service_name, from_screen='main', user_
     CANAL_LINK = "https://t.me/+1Bs3nxvDPCgyODcx"  # 👈 Troque pelo link do seu canal
     
     if specialist_type == 'ghost':
-        text = f"💬 Falar com Especialista - {service_name}"
+        text = f"💬 Falar com Especialista"
     elif specialist_type == 'tio_duck':
-        text = f"💬 Falar com Especialista - {service_name}"
+        text = f"💬 Falar com Especialista"
     else:
-        text = f"💬 Falar com Especialista - {service_name}"
+        text = f"💬 Falar com Especialista"
     
     # Define para onde voltar
     if from_screen == 'consultas':
