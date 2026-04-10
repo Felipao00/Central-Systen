@@ -62,8 +62,6 @@ PARTNERS_MESSAGE = """
 ✅ Confiáveis e seguros
 ✅ Recomendados oficialmente</blockquote>
 
-━━━━━━━━━━━━━━━━━━
-
 💳 <b>Gateway de Pagamento</b>
 <i>Bot oficial para processamento de pagamentos</i>
 
