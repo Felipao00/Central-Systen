@@ -131,22 +131,23 @@ def recharges_keyboard():
     return InlineKeyboardMarkup(keyboard)
 
 # NOVO - Teclado para falar com especialista de recarga
-def recharge_specialist_keyboard(operator, from_screen='recharges'):
-    """Teclado com botão para falar com especialista de recarga"""
-    from config import GHOST_USERNAME
+def recharge_specialist_keyboard(operator, from_screen='recharges', user_id=None, username=None, first_name=None):
+    """Teclado com botão para falar com especialista de recarga - VIA CANAL"""
     
-    url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
+    # Link do canal com mensagens diretas
+    CANAL_LINK = "https://t.me/+1Bs3nxvDPCgyODcx"  # 👈 Troque pelo link do seu canal
+    
     text = f"💬 Falar com Especialista"
     
     if from_screen == 'recharges':
         back_callback = 'recharges'
-        back_text = "🏡 Retonar"
+        back_text = "🏡Retornar"
     else:
         back_callback = 'back_to_main'
         back_text = "🏠 Início"
     
     keyboard = [
-        [InlineKeyboardButton(text, url=url)],
+        [InlineKeyboardButton(text, url=CANAL_LINK)],
         [InlineKeyboardButton(back_text, callback_data=back_callback)]
     ]
     return InlineKeyboardMarkup(keyboard)

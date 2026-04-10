@@ -52,7 +52,17 @@ def tio_duck_specialist_message(service):
 <blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
 """
 
-# NOVAS MENSAGENS:
+def card_specialist_message(card_type):
+    return f"""
+💎 <b>SERVIÇO DE CARTÃO: {card_type}</b> 💎
+
+<blockquote><i>😁 Para dar continuidade ao seu atendimento,</i>
+<i>fale diretamente com nosso especialista.</i></blockquote>
+
+<blockquote><i>⚡ Ele irá processar sua solicitação rapidamente!</i></blockquote>
+
+<blockquote>👀 <b>Obs</b>: <i>Após você entrar em conato com o especialista, é importante que você envie o PRINT da compra e forneça as informações solicitadas.</i></blockquote>
+"""
 
 PARTNERS_MESSAGE = """
 🤝 <b>Parceiros Oficiais</b> 🤝
@@ -131,24 +141,24 @@ e realizar Transações com total sigilo!</blockquote>
 👇 <i>Acesse na aba de PARCEIROS</i>
 """
 
-# Adicione no final do arquivo:
-
 BUSINESS_HOURS_MESSAGE = """
-⏰ <b>HORÁRIOS DE FUNCIONAMENTO</b> ⏰
+⏰ <b>Nossos Horários de Funcionamento</b> ⏰
 
 <blockquote><b>🗓️ Segunda a Sexta:</b>
-🕤 09:30 às 22:00</blockquote>
+🕤 09:30 às 22:00
 
-<blockquote><b>🗓️ Sábado e Domingo:</b>
-🕙 10:00 às 17:00</blockquote>
+<b>🗓️ Sábado e Domingo:</b>
+🕙 10:00 às 17:00
 
-<blockquote><b>🗓️ Feriados:</b>
+<b>🗓️ Feriados:</b>
 🕙 10:00 às 17:00 (horário flexível)</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
+📌 <b>Horário de Brasília (GMT-3)</b>
 
-<i>Fora desses horários, as solicitações ficarão 
-pendentes para o próximo dia útil.</i>
+✅ <b>Atendemos todos os dias!</b>
+
+<i>Qualquer dúvida, fale com nosso suporte!</i>
 """
 
 RULES_MESSAGE = """
@@ -182,8 +192,6 @@ RULES_MESSAGE = """
 ⚠️ <i>O descumprimento das regras 
 pode resultar em bloqueio permanente.</i>
 """
-
-# Adicione no final do arquivo:
 
 RECHARGES_MESSAGE = """
 📱 <b>Recargas de Celular</b> 📱
@@ -266,30 +274,6 @@ def vivo_message():
 
 👇 <b>Clique abaixo para falar com o especialista:</b>
 """
-
-# Adicione no final do arquivo:
-
-BUSINESS_HOURS_MESSAGE = """
-⏰ <b>Nossos Horários de Funcionamento</b> ⏰
-
-<blockquote><b>🗓️ Segunda a Sexta:</b>
-🕤 09:30 às 22:00
-
-<b>🗓️ Sábado e Domingo:</b>
-🕙 10:00 às 17:00
-
-<b>🗓️ Feriados:</b>
-🕙 10:00 às 17:00 (horário flexível)</blockquote>
-
-━━━━━━━━━━━━━━━━━━
-📌 <b>Horário de Brasília (GMT-3)</b>
-
-✅ <b>Atendemos todos os dias!</b>
-
-<i>Qualquer dúvida, fale com nosso suporte!</i>
-"""
-
-# Adicione no final do arquivo:
 
 OUT_OF_HOURS_MESSAGE = """
 😴 <b>Estamos fora do horário de funcionamento</b> 😴
