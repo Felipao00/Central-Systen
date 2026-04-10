@@ -148,7 +148,6 @@ BUSINESS_HOURS_MESSAGE = """
 🕙 10:00 às 17:00 (horário flexível)</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
-<blockquote>📌 <b>Horário de Brasília (GMT-3)</b></i></blockquote>
 
 <i>Fora desses horários, as solicitações ficarão 
 pendentes para o próximo dia útil.</i>
