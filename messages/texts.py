@@ -274,14 +274,14 @@ def vivo_message():
 BUSINESS_HOURS_MESSAGE = """
 ⏰ <b>Nossos Horários de Funcionamento</b> ⏰
 
-<b>🗓️ Segunda a Sexta:</b>
+<blockquote><b>🗓️ Segunda a Sexta:</b>
 🕤 09:30 às 22:00
 
 <b>🗓️ Sábado e Domingo:</b>
 🕙 10:00 às 17:00
 
 <b>🗓️ Feriados:</b>
-🕙 10:00 às 17:00 (horário flexível)
+🕙 10:00 às 17:00 (horário flexível)</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
 📌 <b>Horário de Brasília (GMT-3)</b>
