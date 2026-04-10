@@ -46,27 +46,109 @@ def cards_keyboard():
     ]
     return InlineKeyboardMarkup(keyboard)
 
-def specialist_keyboard(specialist_type, service_name, from_screen='main'):
-    """Teclado com botão para falar com especialista"""
+def specialist_keyboard(specialist_type, service_name, from_screen='main', user_id=None, username=None, first_name=None):
+    """Teclado com botão para falar com especialista - COM DEEP LINK"""
     if specialist_type == 'ghost':
-        url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-        text = f"💬 Falar com Especialista"
+        from config import GHOST_USERNAME
+        username_specialist = GHOST_USERNAME.replace('@', '')
+        text = f"💬 FALAR COM GHOST - {service_name}"
     elif specialist_type == 'tio_duck':
-        url = f"https://t.me/{TIO_DUCK_USERNAME.replace('@', '')}"
-        text = f"💬 Falar com Especialista"
+        from config import TIO_DUCK_USERNAME
+        username_specialist = TIO_DUCK_USERNAME.replace('@', '')
+        text = f"💬 FALAR COM TIO DUCK - {service_name}"
     else:
-        url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-        text = f"💬 Falar com Especialista"
+        from config import GHOST_USERNAME
+        username_specialist = GHOST_USERNAME.replace('@', '')
+        text = f"💬 FALAR COM GHOST - {service_name}"
     
+    # Cria o deep link com informações do cliente
+    from datetime import datetime
+    import urllib.parse
+    
+    # Informações que serão enviadas automaticamente
+    client_info = {
+        'id': user_id or 'N/A',
+        'user': f"@{username}" if username else (first_name or 'N/A'),
+        'servico': service_name,
+        'hora': datetime.now().strftime('%H:%M')
+    }
+    
+    # Mensagem que será enviada automaticamente
+    start_message = (
+        f"🔔 *NOVO ATENDIMENTO*\n\n"
+        f"👤 *Cliente:* {client_info['user']}\n"
+        f"🆔 *ID:* `{client_info['id']}`\n"
+        f"🛒 *Serviço:* {client_info['servico']}\n"
+        f"🕐 *Hora:* {client_info['hora']}\n\n"
+        f"_Cliente aguardando atendimento_"
+    )
+    
+    # Codifica a mensagem para URL
+    encoded_message = urllib.parse.quote(start_message)
+    
+    # Deep link que já abre o chat com a mensagem pronta
+    url = f"https://t.me/{username_specialist}?start={encoded_message}"
+    
+    # Define para onde voltar
     if from_screen == 'consultas':
         back_callback = 'back_to_consultas'
-        back_text = "🏠 Voltar"
+        back_text = "🔙 VOLTAR PARA CONSULTAS"
     elif from_screen == 'cards':
         back_callback = 'back_to_cards'
-        back_text = "🏠 Voltar"
+        back_text = "🔙 VOLTAR PARA CARTÕES"
+    elif from_screen == 'recharges':
+        back_callback = 'recharges'
+        back_text = "🔙 VOLTAR PARA RECARGAS"
     else:
         back_callback = 'back_to_main'
-        back_text = "🏠 início"
+        back_text = "🔙 MENU PRINCIPAL"
+    
+    keyboard = [
+        [InlineKeyboardButton(text, url=url)],
+        [InlineKeyboardButton(back_text, callback_data=back_callback)]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+
+def recharge_specialist_keyboard(operator, from_screen='recharges', user_id=None, username=None, first_name=None):
+    """Teclado com botão para falar com especialista de recarga - COM DEEP LINK"""
+    from config import GHOST_USERNAME
+    from datetime import datetime
+    import urllib.parse
+    
+    username_specialist = GHOST_USERNAME.replace('@', '')
+    text = f"💬 FALAR COM GHOST - RECARGA {operator}"
+    
+    # Informações que serão enviadas automaticamente
+    client_info = {
+        'id': user_id or 'N/A',
+        'user': f"@{username}" if username else (first_name or 'N/A'),
+        'servico': f"RECARGA {operator}",
+        'hora': datetime.now().strftime('%H:%M')
+    }
+    
+    # Mensagem que será enviada automaticamente
+    start_message = (
+        f"🔔 *NOVO ATENDIMENTO - RECARGA*\n\n"
+        f"👤 *Cliente:* {client_info['user']}\n"
+        f"🆔 *ID:* `{client_info['id']}`\n"
+        f"📱 *Operadora:* {operator}\n"
+        f"🕐 *Hora:* {client_info['hora']}\n\n"
+        f"_Cliente aguardando atendimento_"
+    )
+    
+    # Codifica a mensagem para URL
+    encoded_message = urllib.parse.quote(start_message)
+    
+    # Deep link que já abre o chat com a mensagem pronta
+    url = f"https://t.me/{username_specialist}?start={encoded_message}"
+    
+    if from_screen == 'recharges':
+        back_callback = 'recharges'
+        back_text = "🔙 VOLTAR PARA OPERADORAS"
+    else:
+        back_callback = 'back_to_main'
+        back_text = "🔙 MENU PRINCIPAL"
     
     keyboard = [
         [InlineKeyboardButton(text, url=url)],
