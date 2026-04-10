@@ -190,21 +190,14 @@ async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TY
     await query.answer()
     
     from messages.texts import BUSINESS_HOURS_MESSAGE
-    from datetime import datetime
-    import pytz
-    
-    # Pega hora atual de Brasília
-    brasilia_tz = pytz.timezone('America/Sao_Paulo')
-    current_time = datetime.now(brasilia_tz).strftime("%H:%M")
-    
-    message = BUSINESS_HOURS_MESSAGE.format(current_time=current_time)
+    from telegram import InlineKeyboardButton, InlineKeyboardMarkup
     
     keyboard = [
         [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
     ]
     
     await query.edit_message_text(
-        text=message,
+        text=BUSINESS_HOURS_MESSAGE,
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode='HTML'
     )

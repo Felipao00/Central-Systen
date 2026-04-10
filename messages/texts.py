@@ -148,8 +148,7 @@ BUSINESS_HOURS_MESSAGE = """
 🕙 10:00 às 17:00 (horário flexível)</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
-<blockquote>📌 <b>Horário de Brasília (GMT-3)</b>
-⏰ <i>Hora atual: {current_time}</i></blockquote>
+<blockquote>📌 <b>Horário de Brasília (GMT-3)</b></i></blockquote>
 
 <i>Fora desses horários, as solicitações ficarão 
 pendentes para o próximo dia útil.</i>
@@ -185,20 +184,4 @@ RULES_MESSAGE = """
 ━━━━━━━━━━━━━━━━━━
 ⚠️ <i>O descumprimento das regras 
 pode resultar em bloqueio permanente.</i>
-"""
-
-OUT_OF_HOURS_MESSAGE = """
-⏰ <b>FORA DO HORÁRIO DE FUNCIONAMENTO</b> ⏰
-
-😴 Ops! Nossos especialistas estão descansando...
-
-<blockquote><b>Horário atual:</b> {current_time} (Brasília)
-<b>Funcionamos:</b> {business_hours} </blockquote>
-
-<blockquote><🔄 <b>Sua solicitação foi registrada!</b>
-Assim que estivermos online, um especialista 
-entrará em contato para atendê-lo.</blockquote>
-
-💡 <i>Dica: Volte durante nosso horário de 
-funcionamento para atendimento imediato!</i>
 """
