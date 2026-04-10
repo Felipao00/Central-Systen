@@ -24,14 +24,14 @@ def services_keyboard():
 def consultas_keyboard():
     """Teclado de consultas - Ghost e Tio Duck"""
     keyboard = [
-        [InlineKeyboardButton("📄 Consul de CPF", callback_data='service_CPF'),
-         InlineKeyboardButton("🏢 Consul de CNPJ", callback_data='service_CNPJ')],
-        [InlineKeyboardButton("📍 Consul de CEP", callback_data='service_CEP'),
-         InlineKeyboardButton("👤 Consul de NOME", callback_data='service_NOME')],
-        [InlineKeyboardButton("📱 Consul de TELEFONE", callback_data='service_TELEFONE'),
-         InlineKeyboardButton("🚗 Consul de PLACA", callback_data='service_PLACA')],
-        [InlineKeyboardButton("💳 Consul de BIN", callback_data='service_BIN'),
-         InlineKeyboardButton("🌐 Consul de IP", callback_data='service_IP')],
+        [InlineKeyboardButton("📄 CPF", callback_data='service_CPF'),
+         InlineKeyboardButton("🏢 CNPJ", callback_data='service_CNPJ')],
+        [InlineKeyboardButton("📍 CEP", callback_data='service_CEP'),
+         InlineKeyboardButton("👤 NOME", callback_data='service_NOME')],
+        [InlineKeyboardButton("📱 TELEFONE", callback_data='service_TELEFONE'),
+         InlineKeyboardButton("🚗 PLACA", callback_data='service_PLACA')],
+        [InlineKeyboardButton("💳 BIN", callback_data='service_BIN'),
+         InlineKeyboardButton("🌐 IP", callback_data='service_IP')],
         [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_services')]
     ]
     return InlineKeyboardMarkup(keyboard)
