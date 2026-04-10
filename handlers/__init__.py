@@ -14,7 +14,9 @@ from .services import (
     handle_how_it_works,
     handle_deadlines,
     handle_payments,
-    handle_rules            
+    handle_rules,
+    handle_recharges,           # 👈 NOVO
+    handle_recharge_selection   # 👈 NOVO
 )
 
 __all__ = [
@@ -24,6 +26,6 @@ __all__ = [
     'handle_back_to_main', 'handle_back_to_services',
     'handle_back_to_consultas', 'handle_back_to_cards',
     'handle_partners', 'handle_help_menu', 'handle_how_it_works',
-    'handle_deadlines', 'handle_payments',
-    'handle_rules'
+    'handle_deadlines', 'handle_payments', 'handle_rules',
+    'handle_recharges', 'handle_recharge_selection'  # 👈 NOVOS
 ]

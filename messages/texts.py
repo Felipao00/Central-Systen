@@ -184,3 +184,94 @@ RULES_MESSAGE = """
 ⚠️ <i>O descumprimento das regras 
 pode resultar em bloqueio permanente.</i>
 """
+
+# Adicione no final do arquivo:
+
+RECHARGES_MESSAGE = """
+📱 <b>RECARGAS PARA CELULAR</b> 📱
+
+Selecione a operadora desejada:
+
+🔴 <b>CLARO</b>
+🔵 <b>TIM</b>
+🟣 <b>VIVO</b>
+
+━━━━━━━━━━━━━━━━━━
+💰 <b>Valores disponíveis:</b>
+• R$ 15,00
+• R$ 20,00
+• R$ 30,00
+• R$ 50,00
+• R$ 100,00
+
+⚡ <b>Recarga cai na hora!</b>
+✅ Atendimento via Ghost
+
+👇 <i>Escolha a operadora abaixo:</i>
+"""
+
+def claro_message():
+    return """
+🔴 <b>RECARGA CLARO</b> 🔴
+
+<b>Valores disponíveis:</b>
+💰 R$ 15 | R$ 20 | R$ 30 | R$ 50 | R$ 100
+
+<b>Como funciona:</b>
+1️⃣ Informe o número com DDD
+2️⃣ Escolha o valor da recarga
+3️⃣ Realize o pagamento
+4️⃣ Recarga cai na hora!
+
+<b>Bônus Claro:</b>
+🎁 A cada R$ 30 em recargas, ganhe 1GB de bônus!
+
+━━━━━━━━━━━━━━━━━━
+⚠️ <i>Recarga válida para todo Brasil</i>
+
+👇 <b>Clique abaixo para falar com o especialista:</b>
+"""
+
+def tim_message():
+    return """
+🔵 <b>RECARGA TIM</b> 🔵
+
+<b>Valores disponíveis:</b>
+💰 R$ 15 | R$ 20 | R$ 30 | R$ 50 | R$ 100
+
+<b>Como funciona:</b>
+1️⃣ Informe o número com DDD
+2️⃣ Escolha o valor da recarga
+3️⃣ Realize o pagamento
+4️⃣ Recarga cai na hora!
+
+<b>Bônus TIM:</b>
+🎁 Recargas acima de R$ 30 ganham TIM Banca ilimitada!
+
+━━━━━━━━━━━━━━━━━━
+⚠️ <i>Recarga válida para todo Brasil</i>
+
+👇 <b>Clique abaixo para falar com o especialista:</b>
+"""
+
+def vivo_message():
+    return """
+🟣 <b>RECARGA VIVO</b> 🟣
+
+<b>Valores disponíveis:</b>
+💰 R$ 15 | R$ 20 | R$ 30 | R$ 50 | R$ 100
+
+<b>Como funciona:</b>
+1️⃣ Informe o número com DDD
+2️⃣ Escolha o valor da recarga
+3️⃣ Realize o pagamento
+4️⃣ Recarga cai na hora!
+
+<b>Bônus VIVO:</b>
+🎁 VIVO Turbo: 2x mais internet nas recargas!
+
+━━━━━━━━━━━━━━━━━━
+⚠️ <i>Recarga válida para todo Brasil</i>
+
+👇 <b>Clique abaixo para falar com o especialista:</b>
+"""

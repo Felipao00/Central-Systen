@@ -216,3 +216,45 @@ async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode='HTML'
     )
+
+# Adicione no final do arquivo:
+
+async def handle_recharges(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para o botão RECARGAS"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import RECHARGES_MESSAGE
+    
+    await query.edit_message_text(
+        text=RECHARGES_MESSAGE,
+        reply_markup=recharges_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para seleção de operadora de recarga"""
+    query = update.callback_query
+    await query.answer()
+    
+    operator = query.data.replace('recharge_', '')
+    context.user_data['selected_service'] = f"RECARGA {operator}"
+    
+    from messages.texts import claro_message, tim_message, vivo_message
+    
+    if operator == 'CLARO':
+        message = claro_message()
+    elif operator == 'TIM':
+        message = tim_message()
+    elif operator == 'VIVO':
+        message = vivo_message()
+    else:
+        return
+    
+    keyboard = recharge_specialist_keyboard(operator, from_screen='recharges')
+    
+    await query.edit_message_text(
+        text=message,
+        reply_markup=keyboard,
+        parse_mode='HTML'
+    )

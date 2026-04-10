@@ -55,6 +55,9 @@ if __name__ == '__main__':
     application.add_handler(CallbackQueryHandler(handle_back_to_services, pattern='^back_to_services$'))
     application.add_handler(CallbackQueryHandler(handle_back_to_consultas, pattern='^back_to_consultas$'))
     application.add_handler(CallbackQueryHandler(handle_back_to_cards, pattern='^back_to_cards$'))
+    # Na seção de Callbacks, adicione:
+    application.add_handler(CallbackQueryHandler(handle_recharges, pattern='^recharges$'))
+    application.add_handler(CallbackQueryHandler(handle_recharge_selection, pattern='^recharge_'))
     # Novos handlers do menu
     application.add_handler(CallbackQueryHandler(handle_partners, pattern='^partners$'))
     application.add_handler(CallbackQueryHandler(handle_help_menu, pattern='^help_menu$'))

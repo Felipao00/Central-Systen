@@ -5,6 +5,7 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
+        [InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
          InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')],
         [InlineKeyboardButton("📖 Regras", callback_data='rules')]
@@ -110,4 +111,35 @@ def out_of_hours_keyboard(from_screen='main'):
         back_callback = 'back_to_main'
         back_text = "🏠 Início"
     keyboard = [[InlineKeyboardButton(back_text, callback_data=back_callback)]]
+    return InlineKeyboardMarkup(keyboard)
+
+def recharges_keyboard():
+    """Teclado de operadoras de recarga"""
+    keyboard = [
+        [InlineKeyboardButton("🔴 CLARO", callback_data='recharge_CLARO')],
+        [InlineKeyboardButton("🔵 TIM", callback_data='recharge_TIM')],
+        [InlineKeyboardButton("🟣 VIVO", callback_data='recharge_VIVO')],
+        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+# NOVO - Teclado para falar com especialista de recarga
+def recharge_specialist_keyboard(operator, from_screen='recharges'):
+    """Teclado com botão para falar com especialista de recarga"""
+    from config import GHOST_USERNAME
+    
+    url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
+    text = f"💬 FALAR COM GHOST - RECARGA {operator}"
+    
+    if from_screen == 'recharges':
+        back_callback = 'recharges'
+        back_text = "🔙 VOLTAR PARA OPERADORAS"
+    else:
+        back_callback = 'back_to_main'
+        back_text = "🔙 MENU PRINCIPAL"
+    
+    keyboard = [
+        [InlineKeyboardButton(text, url=url)],
+        [InlineKeyboardButton(back_text, callback_data=back_callback)]
+    ]
     return InlineKeyboardMarkup(keyboard)
