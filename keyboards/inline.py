@@ -5,10 +5,10 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
-        [InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
-         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')],
-        [InlineKeyboardButton("📖 Regras", callback_data='rules')]
+         InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
+        [InlineKeyboardButton("📖 Regras", callback_data='rules'),
+         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
