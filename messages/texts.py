@@ -268,3 +268,25 @@ def vivo_message():
 
 👇 <b>Clique abaixo para falar com o especialista:</b>
 """
+
+# Adicione no final do arquivo:
+
+BUSINESS_HOURS_MESSAGE = """
+⏰ <b>HORÁRIOS DE FUNCIONAMENTO</b> ⏰
+
+<b>🗓️ Segunda a Sexta:</b>
+🕤 09:30 às 22:00
+
+<b>🗓️ Sábado e Domingo:</b>
+🕙 10:00 às 17:00
+
+<b>🗓️ Feriados:</b>
+🕙 10:00 às 17:00 (horário flexível)
+
+━━━━━━━━━━━━━━━━━━
+📌 <b>Horário de Brasília (GMT-3)</b>
+
+✅ <b>Atendemos todos os dias!</b>
+
+<i>Qualquer dúvida, fale com nosso suporte!</i>
+"""

@@ -184,23 +184,23 @@ async def handle_payments(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode='HTML'
     )
 
-#async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    #"""Handler para o botão HORÁRIOS (apenas informativo)"""
-    #query = update.callback_query
-    #await query.answer()
+async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para o botão HORÁRIOS"""
+    query = update.callback_query
+    await query.answer()
     
-    #from messages.texts import BUSINESS_HOURS_MESSAGE
-    #from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+    from messages.texts import BUSINESS_HOURS_MESSAGE
+    from telegram import InlineKeyboardButton, InlineKeyboardMarkup
     
-    #keyboard = [
-    #    [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
-    #]
+    keyboard = [
+        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+    ]
     
-   # await query.edit_message_text(
-    #    text=BUSINESS_HOURS_MESSAGE,
-   #     reply_markup=InlineKeyboardMarkup(keyboard),
-   #     parse_mode='HTML'
-  # )
+    await query.edit_message_text(
+        text=BUSINESS_HOURS_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )
 
 async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para o botão REGRAS"""
