@@ -62,7 +62,7 @@ if __name__ == '__main__':
     application.add_handler(CallbackQueryHandler(handle_deadlines, pattern='^deadlines$'))
     application.add_handler(CallbackQueryHandler(handle_payments, pattern='^payments$'))
     # Na seção de Callbacks, adicione:
-    application.add_handler(CallbackQueryHandler(handle_business_hours, pattern='^business_hours$'))
+    #application.add_handler(CallbackQueryHandler(handle_business_hours, pattern='^business_hours$'))
     application.add_handler(CallbackQueryHandler(handle_rules, pattern='^rules$'))
     
     # Configurar menu de comandos

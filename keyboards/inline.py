@@ -7,8 +7,7 @@ def main_menu_keyboard():
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
          InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')],
-        [InlineKeyboardButton("⏰ Horários", callback_data='business_hours'),
-         InlineKeyboardButton("📖 Regras", callback_data='rules')]
+        [InlineKeyboardButton("📖 Regras", callback_data='rules')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
