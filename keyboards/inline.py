@@ -151,16 +151,16 @@ def out_of_hours_keyboard(from_screen='main'):
     """Teclado para quando está fora do horário"""
     if from_screen == 'consultas':
         back_callback = 'back_to_consultas'
-        back_text = "🔙 VOLTAR PARA CONSULTAS"
+        back_text = "🏠 Retornar"
     elif from_screen == 'cards':
         back_callback = 'back_to_cards'
-        back_text = "🔙 VOLTAR PARA CARTÕES"
+        back_text = "🏠 Retornar"
     elif from_screen == 'recharges':
         back_callback = 'recharges'
-        back_text = "🔙 VOLTAR PARA RECARGAS"
+        back_text = "🏠 Retornar"
     else:
         back_callback = 'back_to_main'
-        back_text = "🔙 MENU PRINCIPAL"
+        back_text = "🏠 Início"
     
     keyboard = [
         [InlineKeyboardButton("⏰ VER HORÁRIOS", callback_data='business_hours')],

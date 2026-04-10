@@ -272,16 +272,16 @@ def vivo_message():
 # Adicione no final do arquivo:
 
 BUSINESS_HOURS_MESSAGE = """
-⏰ <b>HORÁRIOS DE FUNCIONAMENTO</b> ⏰
+⏰ <b>Nossos Horários de Funcionamento</b> ⏰
 
-<b>🗓️ Segunda a Sexta:</b>
-🕤 09:30 às 22:00
+<blockquote><b>🗓️ Segunda a Sexta:</b>
+🕤 09:30 às 22:00</blocquote>
 
-<b>🗓️ Sábado e Domingo:</b>
-🕙 10:00 às 17:00
+<blockquote><b>🗓️ Sábado e Domingo:</b>
+🕙 10:00 às 17:00</blocquote>
 
-<b>🗓️ Feriados:</b>
-🕙 10:00 às 17:00 (horário flexível)
+<blockquote><b>🗓️ Feriados:</b>
+🕙 10:00 às 17:00 (horário flexível)</blocquote>
 
 ━━━━━━━━━━━━━━━━━━
 📌 <b>Horário de Brasília (GMT-3)</b>
@@ -294,21 +294,21 @@ BUSINESS_HOURS_MESSAGE = """
 # Adicione no final do arquivo:
 
 OUT_OF_HOURS_MESSAGE = """
-😴 <b>FORA DO HORÁRIO DE FUNCIONAMENTO</b> 😴
+😴 <b>Estamos fora do horário de funcionamento</b> 😴
 
-Nossa equipe está descansando no momento!
+<i>Nossa equipe está descansando no momento!</i>
 
-<b>📅 Hoje é {current_day}</b>
-<b>🕐 Hora atual:</b> {current_time} (Brasília)
+<blockquote><b>📅 Hoje é {current_day}</b>
+<b>🕐 Hora atual:</b> {current_time} (Brasília)</blockquote>
 
-<b>⏰ Nosso horário de atendimento:</b>
-{business_hours}
+<blockquote><b>⏰ Nosso horário de atendimento:</b>
+{business_hours}</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
 ✅ <b>Sua solicitação foi registrada!</b>
 
-Assim que estivermos online, um especialista 
-entrará em contato para atendê-lo.
+<blockquote><b>Assim que estivermos online, um especialista </b>
+<b>entrará em contato para atendê-lo.</b></blockquote>
 
 💡 <i>Volte durante nosso horário de 
 funcionamento para atendimento imediato!</i>
