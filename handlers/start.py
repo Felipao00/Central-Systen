@@ -30,25 +30,6 @@ async def servicos(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode='HTML'
     )
 
-async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para o comando /ajuda"""
-    help_text = """
-🆘 <b>CENTRAL DE AJUDA</b>
-
-<blockquote><b>Como funciona:</b>
-1️⃣ <i>Escolha o tipo de serviço que você adquiriu no nosso site</i>
-2️⃣ <i>Selecione o serviço adquirido e envie todas as informações solicitadas</i>
-3️⃣ <i>Fale com nosso especialista para poder processar sua solicitação</i></blockquote>
-
-<blockquote><b>Dúvidas frequentes:</b>
-⏱️ <b>Prazo de entrega:</b> <i>Damos um prazo de até 24 a 48 horas úteis após o pagamento</i>
-💳 <b>Forma de pagamento:</b> <i>Apenas PIX</i></blockquote>
-"""
-    await update.message.reply_text(
-        text=help_text,
-        parse_mode='HTML'
-    )
-
 async def contato(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para o comando /contato"""
     from config import GHOST_USERNAME, TIO_DUCK_USERNAME

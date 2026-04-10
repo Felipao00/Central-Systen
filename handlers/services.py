@@ -237,7 +237,7 @@ async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     
     keyboard = [
-        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     
     await query.edit_message_text(
@@ -252,7 +252,7 @@ async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TY
     await query.answer()
     
     keyboard = [
-        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     
     await query.edit_message_text(
