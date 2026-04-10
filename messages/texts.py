@@ -1,5 +1,5 @@
 WELCOME_MESSAGE = """
-👋<b>Olá, Seja bem vindo(a) a Central Systen!</b>
+👋<b>Olá, {first_name}! Seja bem vindo(a) a Central Systen!</b>
 
 <b><i>Junte-se à <b>CENTRAL SYSTEN</b> e tenha acesso aos melhores serviços digitais com total segurança e agilidade!</i></b> 🚀
 

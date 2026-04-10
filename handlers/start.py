@@ -5,8 +5,11 @@ from messages.texts import WELCOME_MESSAGE, SERVICE_SELECTION
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para o comando /start"""
+    user = update.effective_user
+    first_name = user.first_name or "Visitante"
+    
     await update.message.reply_text(
-        text=WELCOME_MESSAGE,
+        text=WELCOME_MESSAGE.format(first_name=first_name),
         reply_markup=main_menu_keyboard(),
         parse_mode='HTML'
     )
