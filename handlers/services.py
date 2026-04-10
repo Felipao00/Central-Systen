@@ -1,4 +1,4 @@
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from keyboards.inline import *
 from messages.texts import *
@@ -86,8 +86,11 @@ async def handle_back_to_main(update: Update, context: ContextTypes.DEFAULT_TYPE
     query = update.callback_query
     await query.answer()
     
+    user = query.from_user
+    first_name = user.first_name or "Visitante"
+    
     await query.edit_message_text(
-        text=WELCOME_MESSAGE,
+        text=WELCOME_MESSAGE.format(first_name=first_name),
         reply_markup=main_menu_keyboard(),
         parse_mode='HTML'
     )
@@ -181,19 +184,19 @@ async def handle_payments(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parse_mode='HTML'
     )
 
-# Adicione no final do arquivo:
-
-from utils import is_business_hours, get_business_hours_message, get_current_time_brasilia
-
 async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para o botão HORÁRIOS"""
+    """Handler para o botão HORÁRIOS (apenas informativo)"""
     query = update.callback_query
     await query.answer()
     
     from messages.texts import BUSINESS_HOURS_MESSAGE
-    from keyboards.inline import help_back_keyboard
+    from datetime import datetime
+    import pytz
     
-    current_time = get_current_time_brasilia()
+    # Pega hora atual de Brasília
+    brasilia_tz = pytz.timezone('America/Sao_Paulo')
+    current_time = datetime.now(brasilia_tz).strftime("%H:%M")
+    
     message = BUSINESS_HOURS_MESSAGE.format(current_time=current_time)
     
     keyboard = [
@@ -211,9 +214,6 @@ async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     
-    from messages.texts import RULES_MESSAGE
-    from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-    
     keyboard = [
         [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
     ]
@@ -221,89 +221,5 @@ async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.edit_message_text(
         text=RULES_MESSAGE,
         reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode='HTML'
-    )
-
-async def handle_service_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para seleção de serviço específico - COM VERIFICAÇÃO DE HORÁRIO"""
-    query = update.callback_query
-    await query.answer()
-    
-    service = query.data.replace('service_', '')
-    context.user_data['selected_service'] = service
-    
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('consultas'),
-            parse_mode='HTML'
-        )
-        return
-    
-    if service in GHOST_SERVICES:
-        message = ghost_specialist_message(service)
-        keyboard = specialist_keyboard('ghost', service, from_screen='consultas')
-    elif service in TIO_DUCK_SERVICES:
-        message = tio_duck_specialist_message(service)
-        keyboard = specialist_keyboard('tio_duck', service, from_screen='consultas')
-    else:
-        return
-    
-    await query.edit_message_text(
-        text=message,
-        reply_markup=keyboard,
-        parse_mode='HTML'
-    )
-
-async def handle_card_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para seleção de tipo de cartão - COM VERIFICAÇÃO DE HORÁRIO"""
-    query = update.callback_query
-    await query.answer()
-    
-    card_type = "Info CC S/Verificação" if query.data == 'card_no_verification' else "Info CC Verificado"
-    context.user_data['selected_service'] = card_type
-    
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('cards'),
-            parse_mode='HTML'
-        )
-        return
-    
-    if card_type == "Info CC Verificado":
-        message = ghost_specialist_message(card_type)
-        keyboard = specialist_keyboard('ghost', card_type, from_screen='cards')
-    else:
-        message = tio_duck_specialist_message(card_type)
-        keyboard = specialist_keyboard('tio_duck', card_type, from_screen='cards')
-    
-    await query.edit_message_text(
-        text=message,
-        reply_markup=keyboard,
         parse_mode='HTML'
     )
