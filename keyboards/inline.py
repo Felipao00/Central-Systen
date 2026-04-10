@@ -46,30 +46,36 @@ def cards_keyboard():
     ]
     return InlineKeyboardMarkup(keyboard)
 
-def specialist_keyboard(specialist_type, service_name, from_screen='main'):
-    """Teclado com botão para falar com especialista"""
-    if specialist_type == 'ghost':
-        url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-        text = f"💬 Falar com Especialista"
-    elif specialist_type == 'tio_duck':
-        url = f"https://t.me/{TIO_DUCK_USERNAME.replace('@', '')}"
-        text = f"💬 Falar com Especialista"
-    else:
-        url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-        text = f"💬 Falar com Especialista"
+def specialist_keyboard(specialist_type, service_name, from_screen='main', user_id=None, username=None, first_name=None):
+    """Teclado com botão para falar com especialista - VIA CANAL"""
     
+    # Link da mensagem direta do CANAL (não do especialista)
+    # Formato: https://t.me/SEU_CANAL?start=msg
+    CANAL_LINK = "https://t.me/+1Bs3nxvDPCgyODcx"  # 👈 Troque pelo link do seu canal
+    
+    if specialist_type == 'ghost':
+        text = f"💬 Falar com Especialista - {service_name}"
+    elif specialist_type == 'tio_duck':
+        text = f"💬 Falar com Especialista - {service_name}"
+    else:
+        text = f"💬 Falar com Especialista - {service_name}"
+    
+    # Define para onde voltar
     if from_screen == 'consultas':
         back_callback = 'back_to_consultas'
-        back_text = "🏠 Voltar"
+        back_text = "🏡 Retornar"
     elif from_screen == 'cards':
         back_callback = 'back_to_cards'
-        back_text = "🏠 Voltar"
+        back_text = "🏡 Retornar"
+    elif from_screen == 'recharges':
+        back_callback = 'recharges'
+        back_text = "🏡 Retornar"
     else:
         back_callback = 'back_to_main'
-        back_text = "🏠 início"
+        back_text = "🏡 Retornar"
     
     keyboard = [
-        [InlineKeyboardButton(text, url=url)],
+        [InlineKeyboardButton(text, url=CANAL_LINK)],
         [InlineKeyboardButton(back_text, callback_data=back_callback)]
     ]
     return InlineKeyboardMarkup(keyboard)
