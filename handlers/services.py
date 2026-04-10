@@ -46,11 +46,6 @@ async def handle_service_selection(update: Update, context: ContextTypes.DEFAULT
     service = query.data.replace('service_', '')
     context.user_data['selected_service'] = service
     
-    user = query.from_user
-    user_id = user.id
-    username = user.username
-    first_name = user.first_name
-    
     # Verifica se está no horário de funcionamento
     if not is_business_hours():
         from messages.texts import OUT_OF_HOURS_MESSAGE
@@ -76,12 +71,10 @@ async def handle_service_selection(update: Update, context: ContextTypes.DEFAULT
     # Só chega aqui se ESTIVER no horário
     if service in GHOST_SERVICES:
         message = ghost_specialist_message(service)
-        keyboard = specialist_keyboard('ghost', service, from_screen='consultas', 
-                                       user_id=user_id, username=username, first_name=first_name)
+        keyboard = specialist_keyboard('ghost', service, from_screen='consultas')
     elif service in TIO_DUCK_SERVICES:
         message = tio_duck_specialist_message(service)
-        keyboard = specialist_keyboard('tio_duck', service, from_screen='consultas',
-                                       user_id=user_id, username=username, first_name=first_name)
+        keyboard = specialist_keyboard('tio_duck', service, from_screen='consultas')
     else:
         return
     
@@ -98,11 +91,6 @@ async def handle_card_selection(update: Update, context: ContextTypes.DEFAULT_TY
     
     card_type = "Info CC S/Verificação" if query.data == 'card_no_verification' else "Info CC Verificado"
     context.user_data['selected_service'] = card_type
-    
-    user = query.from_user
-    user_id = user.id
-    username = user.username
-    first_name = user.first_name
     
     # Verifica se está no horário de funcionamento
     if not is_business_hours():
@@ -129,12 +117,10 @@ async def handle_card_selection(update: Update, context: ContextTypes.DEFAULT_TY
     # Só chega aqui se ESTIVER no horário
     if card_type == "Info CC Verificado":
         message = ghost_specialist_message(card_type)
-        keyboard = specialist_keyboard('ghost', card_type, from_screen='cards',
-                                       user_id=user_id, username=username, first_name=first_name)
+        keyboard = specialist_keyboard('ghost', card_type, from_screen='cards')
     else:
         message = tio_duck_specialist_message(card_type)
-        keyboard = specialist_keyboard('tio_duck', card_type, from_screen='cards',
-                                       user_id=user_id, username=username, first_name=first_name)
+        keyboard = specialist_keyboard('tio_duck', card_type, from_screen='cards')
     
     await query.edit_message_text(
         text=message,
@@ -251,7 +237,7 @@ async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     
     keyboard = [
-        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     
     await query.edit_message_text(
@@ -266,7 +252,7 @@ async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TY
     await query.answer()
     
     keyboard = [
-        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     
     await query.edit_message_text(
@@ -293,11 +279,6 @@ async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAUL
     
     operator = query.data.replace('recharge_', '')
     context.user_data['selected_service'] = f"RECARGA {operator}"
-    
-    user = query.from_user
-    user_id = user.id
-    username = user.username
-    first_name = user.first_name
     
     # Verifica se está no horário de funcionamento
     if not is_business_hours():
@@ -333,8 +314,7 @@ async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAUL
     else:
         return
     
-    keyboard = recharge_specialist_keyboard(operator, from_screen='recharges',
-                                            user_id=user_id, username=username, first_name=first_name)
+    keyboard = recharge_specialist_keyboard(operator, from_screen='recharges')
     
     await query.edit_message_text(
         text=message,
