@@ -57,10 +57,10 @@ def tio_duck_specialist_message(service):
 PARTNERS_MESSAGE = """
 🤝 <b>Parceiros Oficiais</b> 🤝
 
-<b>Todos os parceiros listados abaixo são:</b>
+<blockquote><b>Todos os parceiros listados abaixo são:</b>
 ✅ Verificados pela CENTRAL SYSTEN
 ✅ Confiáveis e seguros
-✅ Recomendados oficialmente
+✅ Recomendados oficialmente</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
 
