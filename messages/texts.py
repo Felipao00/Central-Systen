@@ -42,7 +42,6 @@ def ghost_specialist_message(service):
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 📄 <b>Serviço:</b> {service}
 🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
@@ -65,7 +64,6 @@ def tio_duck_specialist_message(service):
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>TIO DUCK</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 📄 <b>Serviço:</b> {service}
 🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
@@ -88,7 +86,6 @@ def card_specialist_message(card_type):
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 💳 <b>Serviço:</b> {card_type}
 🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
@@ -261,7 +258,6 @@ def claro_message():
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 📱 <b>Serviço:</b> <i>Recarga CLARO</i>
 🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
@@ -292,7 +288,6 @@ def tim_message():
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 📱 <b>Serviço:</b> <i>Recarga TIM</i>
 🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
@@ -323,7 +318,6 @@ def vivo_message():
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 📱 <b>Serviço:</b> <i>Recarga VIVO</i>
 🧾 <b>Comprovante:</b> <i>Print do pagamento</i>
