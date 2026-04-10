@@ -188,43 +188,36 @@ pode resultar em bloqueio permanente.</i>
 # Adicione no final do arquivo:
 
 RECHARGES_MESSAGE = """
-📱 <b>RECARGAS PARA CELULAR</b> 📱
+📱 <b>Recargas de Celular</b> 📱
 
-Selecione a operadora desejada:
+<i>Selecione a operadora desejada:</i>
 
-🔴 <b>CLARO</b>
+<blockquote>🔴 <b>CLARO</b>
 🔵 <b>TIM</b>
-🟣 <b>VIVO</b>
+🟣 <b>VIVO</b></blockquote>
 
 ━━━━━━━━━━━━━━━━━━
-💰 <b>Valores disponíveis:</b>
-• R$ 15,00
-• R$ 20,00
-• R$ 30,00
-• R$ 50,00
-• R$ 100,00
+<blockquote>⚡ <b>Recarga cai na hora!</b>
+✅ Atendimento Rápido e Seguro</blockquote>
 
-⚡ <b>Recarga cai na hora!</b>
-✅ Atendimento via Ghost
-
-👇 <i>Escolha a operadora abaixo:</i>
+👇 <i>Escolha a sua operadora abaixo:</i>
 """
 
 def claro_message():
     return """
-🔴 <b>RECARGA CLARO</b> 🔴
+🔴 <b>Recarga Claro</b> 🔴
 
 <b>Valores disponíveis:</b>
-💰 R$ 15 | R$ 20 | R$ 30 | R$ 50 | R$ 100
+💰 <i>R$ 25 | R$ 30 | R$ 35 | R$ 40 | R$ 50 | R$ 60 | R$ 100</i>
 
-<b>Como funciona:</b>
+<blockquote><b>Como funciona:</b>
 1️⃣ Informe o número com DDD
 2️⃣ Escolha o valor da recarga
 3️⃣ Realize o pagamento
-4️⃣ Recarga cai na hora!
+4️⃣ Recarga cai na hora!</blockquote>
 
 <b>Bônus Claro:</b>
-🎁 A cada R$ 30 em recargas, ganhe 1GB de bônus!
+🎁 <i>A cada R$ 30,00 em recargas, ganhe 1GB de bônus!</i>
 
 ━━━━━━━━━━━━━━━━━━
 ⚠️ <i>Recarga válida para todo Brasil</i>
@@ -234,19 +227,19 @@ def claro_message():
 
 def tim_message():
     return """
-🔵 <b>RECARGA TIM</b> 🔵
+🔵 <b>Recarga Tim</b> 🔵
 
 <b>Valores disponíveis:</b>
-💰 R$ 15 | R$ 20 | R$ 30 | R$ 50 | R$ 100
+💰 <i>R$ 20 | R$ 30</i>
 
-<b>Como funciona:</b>
+<blockquote><b>Como funciona:</b>
 1️⃣ Informe o número com DDD
 2️⃣ Escolha o valor da recarga
 3️⃣ Realize o pagamento
-4️⃣ Recarga cai na hora!
+4️⃣ Recarga cai na hora!</blockquote>
 
 <b>Bônus TIM:</b>
-🎁 Recargas acima de R$ 30 ganham TIM Banca ilimitada!
+🎁 <i>Recargas acima de R$ 30 ganham TIM Banca ilimitada!</i>
 
 ━━━━━━━━━━━━━━━━━━
 ⚠️ <i>Recarga válida para todo Brasil</i>
@@ -256,19 +249,19 @@ def tim_message():
 
 def vivo_message():
     return """
-🟣 <b>RECARGA VIVO</b> 🟣
+🟣 <b>Recarga Vivo</b> 🟣
 
 <b>Valores disponíveis:</b>
-💰 R$ 15 | R$ 20 | R$ 30 | R$ 50 | R$ 100
+💰 <i>R$ 20 | R$ 25 | R$ 30</i>
 
-<b>Como funciona:</b>
+<blockquote><b>Como funciona:</b>
 1️⃣ Informe o número com DDD
 2️⃣ Escolha o valor da recarga
 3️⃣ Realize o pagamento
-4️⃣ Recarga cai na hora!
+4️⃣ Recarga cai na hora!</blockquote>
 
 <b>Bônus VIVO:</b>
-🎁 VIVO Turbo: 2x mais internet nas recargas!
+🎁 <i>VIVO Turbo: 2x mais internet nas recargas!</i>
 
 ━━━━━━━━━━━━━━━━━━
 ⚠️ <i>Recarga válida para todo Brasil</i>

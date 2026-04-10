@@ -116,10 +116,10 @@ def out_of_hours_keyboard(from_screen='main'):
 def recharges_keyboard():
     """Teclado de operadoras de recarga"""
     keyboard = [
-        [InlineKeyboardButton("🔴 CLARO", callback_data='recharge_CLARO')],
-        [InlineKeyboardButton("🔵 TIM", callback_data='recharge_TIM')],
-        [InlineKeyboardButton("🟣 VIVO", callback_data='recharge_VIVO')],
-        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+        [InlineKeyboardButton("🔴 Claro", callback_data='recharge_CLARO')],
+        [InlineKeyboardButton("🔵 Tim", callback_data='recharge_TIM')],
+        [InlineKeyboardButton("🟣 Vivo", callback_data='recharge_VIVO')],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -129,14 +129,14 @@ def recharge_specialist_keyboard(operator, from_screen='recharges'):
     from config import GHOST_USERNAME
     
     url = f"https://t.me/{GHOST_USERNAME.replace('@', '')}"
-    text = f"💬 FALAR COM GHOST - RECARGA {operator}"
+    text = f"💬 Falar com Especialista"
     
     if from_screen == 'recharges':
         back_callback = 'recharges'
-        back_text = "🔙 VOLTAR PARA OPERADORAS"
+        back_text = "🏡 Retonar"
     else:
         back_callback = 'back_to_main'
-        back_text = "🔙 MENU PRINCIPAL"
+        back_text = "🏠 Início"
     
     keyboard = [
         [InlineKeyboardButton(text, url=url)],
