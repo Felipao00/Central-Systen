@@ -3,6 +3,7 @@ from telegram.ext import ContextTypes
 from keyboards.inline import *
 from messages.texts import *
 from config import GHOST_SERVICES, TIO_DUCK_SERVICES
+from config import GHOST_SERVICES, TIO_DUCK_SERVICES, CANAL_LINK  # 👈 Adicione CANAL_LINK aqui
 from utils import is_business_hours, get_business_hours_message, get_current_time_brasilia, get_current_day_brasilia
 
 async def handle_service_acquired(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -329,95 +330,22 @@ async def handle_bot_vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
     
-    from messages.texts import BOT_VIP_MESSAGE
-    
     await query.edit_message_text(
         text=BOT_VIP_MESSAGE,
         reply_markup=bot_vip_keyboard(),
         parse_mode='HTML'
     )
 
-async def handle_bot_models(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para VER MODELOS"""
-    query = update.callback_query
-    await query.answer()
-    
-    from messages.texts import BOT_MODELS_MESSAGE
-    
-    await query.edit_message_text(
-        text=BOT_MODELS_MESSAGE,
-        reply_markup=bot_models_keyboard(),
-        parse_mode='HTML'
-    )
-
-async def handle_model_vip_group(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para modelo GRUPO VIP"""
-    query = update.callback_query
-    await query.answer()
-    
-    from messages.texts import MODEL_VIP_GROUP_MESSAGE
-    
-    keyboard = [
-        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
-        [InlineKeyboardButton("🔙 VOLTAR PARA MODELOS", callback_data='bot_models')],
-        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
-    ]
-    
-    await query.edit_message_text(
-        text=MODEL_VIP_GROUP_MESSAGE,
-        reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode='HTML'
-    )
-
-async def handle_model_sales(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para modelo VENDAS"""
-    query = update.callback_query
-    await query.answer()
-    
-    from messages.texts import MODEL_SALES_MESSAGE
-    
-    keyboard = [
-        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
-        [InlineKeyboardButton("🔙 VOLTAR PARA MODELOS", callback_data='bot_models')],
-        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
-    ]
-    
-    await query.edit_message_text(
-        text=MODEL_SALES_MESSAGE,
-        reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode='HTML'
-    )
-
-async def handle_model_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para modelo ASSINATURAS"""
-    query = update.callback_query
-    await query.answer()
-    
-    from messages.texts import MODEL_SUBSCRIPTION_MESSAGE
-    
-    keyboard = [
-        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
-        [InlineKeyboardButton("🔙 VOLTAR PARA MODELOS", callback_data='bot_models')],
-        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
-    ]
-    
-    await query.edit_message_text(
-        text=MODEL_SUBSCRIPTION_MESSAGE,
-        reply_markup=InlineKeyboardMarkup(keyboard),
-        parse_mode='HTML'
-    )
+# Remova as funções: handle_bot_models, handle_model_vip_group, handle_model_sales, handle_model_subscription
 
 async def handle_request_quote(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para SOLICITAR ORÇAMENTO"""
     query = update.callback_query
     await query.answer()
     
-    from messages.texts import REQUEST_QUOTE_MESSAGE
-    from config import CANAL_LINK
-    
     keyboard = [
-        [InlineKeyboardButton("💬 FALAR COM GHOST", url=CANAL_LINK)],
-        [InlineKeyboardButton("🔙 VOLTAR PARA BOT VIP", callback_data='bot_vip')]
+        [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
+        [InlineKeyboardButton("🏠 Início", callback_data='bot_vip')]
     ]
     
     await query.edit_message_text(
