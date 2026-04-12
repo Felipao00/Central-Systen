@@ -321,3 +321,107 @@ async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAUL
         reply_markup=keyboard,
         parse_mode='HTML'
     )
+
+# Adicione no final do arquivo:
+
+async def handle_bot_vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para o botão BOT VIP"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import BOT_VIP_MESSAGE
+    
+    await query.edit_message_text(
+        text=BOT_VIP_MESSAGE,
+        reply_markup=bot_vip_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_bot_models(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para VER MODELOS"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import BOT_MODELS_MESSAGE
+    
+    await query.edit_message_text(
+        text=BOT_MODELS_MESSAGE,
+        reply_markup=bot_models_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_model_vip_group(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para modelo GRUPO VIP"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import MODEL_VIP_GROUP_MESSAGE
+    
+    keyboard = [
+        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
+        [InlineKeyboardButton("🔙 VOLTAR PARA MODELOS", callback_data='bot_models')],
+        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
+    ]
+    
+    await query.edit_message_text(
+        text=MODEL_VIP_GROUP_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )
+
+async def handle_model_sales(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para modelo VENDAS"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import MODEL_SALES_MESSAGE
+    
+    keyboard = [
+        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
+        [InlineKeyboardButton("🔙 VOLTAR PARA MODELOS", callback_data='bot_models')],
+        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
+    ]
+    
+    await query.edit_message_text(
+        text=MODEL_SALES_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )
+
+async def handle_model_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para modelo ASSINATURAS"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import MODEL_SUBSCRIPTION_MESSAGE
+    
+    keyboard = [
+        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
+        [InlineKeyboardButton("🔙 VOLTAR PARA MODELOS", callback_data='bot_models')],
+        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
+    ]
+    
+    await query.edit_message_text(
+        text=MODEL_SUBSCRIPTION_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )
+
+async def handle_request_quote(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para SOLICITAR ORÇAMENTO"""
+    query = update.callback_query
+    await query.answer()
+    
+    from messages.texts import REQUEST_QUOTE_MESSAGE
+    from config import CANAL_LINK
+    
+    keyboard = [
+        [InlineKeyboardButton("💬 FALAR COM GHOST", url=CANAL_LINK)],
+        [InlineKeyboardButton("🔙 VOLTAR PARA BOT VIP", callback_data='bot_vip')]
+    ]
+    
+    await query.edit_message_text(
+        text=REQUEST_QUOTE_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )

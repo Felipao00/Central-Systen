@@ -67,6 +67,13 @@ if __name__ == '__main__':
     # Na seção de Callbacks, adicione:
     application.add_handler(CallbackQueryHandler(handle_business_hours, pattern='^business_hours$'))
     application.add_handler(CallbackQueryHandler(handle_rules, pattern='^rules$'))
+    # Callbacks do BOT VIP
+    application.add_handler(CallbackQueryHandler(handle_bot_vip, pattern='^bot_vip$'))
+    application.add_handler(CallbackQueryHandler(handle_bot_models, pattern='^bot_models$'))
+    application.add_handler(CallbackQueryHandler(handle_model_vip_group, pattern='^model_vip_group$'))
+    application.add_handler(CallbackQueryHandler(handle_model_sales, pattern='^model_sales$'))
+    application.add_handler(CallbackQueryHandler(handle_model_subscription, pattern='^model_subscription$'))
+    application.add_handler(CallbackQueryHandler(handle_request_quote, pattern='^request_quote$'))
     
     # Configurar menu de comandos
     application.post_init = set_bot_commands

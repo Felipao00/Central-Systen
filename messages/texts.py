@@ -357,3 +357,197 @@ funcionamento para atendimento imediato!</i>
 
 👇 <i>Você pode consultar nossos horários no menu principal.</i>
 """
+
+# Adicione no final do arquivo:
+
+BOT_VIP_MESSAGE = """
+🤖 <b>BOT VIP - Desenvolvimento Exclusivo</b> 🤖
+
+<blockquote><b>Criamos bots personalizados para automatizar e gerenciar seus grupos e canais no Telegram!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>O QUE OFERECEMOS:</b>
+
+<blockquote>🔒 <b>Bot para Grupo VIP</b>
+<i>Controle de acesso por assinatura, pagamentos automáticos e gestão de membros.</i>
+
+📦 <b>Bot de Vendas</b>
+<i>Venda de packs, produtos digitais, serviços e muito mais de forma automatizada.</i>
+
+🎟️ <b>Bot de Assinaturas</b>
+<i>Sistema completo de cobrança recorrente com PIX, cartão e criptomoedas.</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>FUNCIONALIDADES DISPONÍVEIS:</b>
+
+<blockquote>✅ Pagamento via PIX automático
+✅ Integração com gateways de pagamento
+✅ Gestão de membros VIP
+✅ Expulsão automática de inadimplentes
+✅ Links de convite temporários
+✅ Painel administrativo
+✅ Relatórios de vendas
+✅ Suporte a múltiplos grupos/canais
+✅ Personalização completa</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>COMO FUNCIONA:</b>
+
+<blockquote>1️⃣ Você nos conta o que precisa
+2️⃣ Fazemos um orçamento personalizado
+3️⃣ Após aprovação, desenvolvemos seu bot
+4️⃣ Entregamos configurado e pronto para usar</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+💰 <b>VALORES:</b>
+
+<blockquote><i>Os preços variam conforme a complexidade e funcionalidades desejadas.</i>
+
+<b>Entre em contato para um orçamento gratuito!</b></blockquote>
+
+👇 <i>Escolha uma opção abaixo:</i>
+"""
+
+BOT_MODELS_MESSAGE = """
+📋 <b>MODELOS DE BOT DISPONÍVEIS</b> 📋
+
+<i>Selecione um modelo para saber mais:</i>
+
+━━━━━━━━━━━━━━━━━━
+
+<blockquote>🔒 <b>BOT PARA GRUPO VIP</b>
+<i>Ideal para canais e grupos com acesso pago</i></blockquote>
+
+<blockquote>📦 <b>BOT PARA VENDAS</b>
+<i>Perfeito para vender packs, cursos e produtos</i></blockquote>
+
+<blockquote>🎟️ <b>BOT PARA ASSINATURAS</b>
+<i>Sistema completo de cobrança recorrente</i></blockquote>
+
+👇 <i>Clique em um modelo para ver os detalhes:</i>
+"""
+
+MODEL_VIP_GROUP_MESSAGE = """
+🔒 <b>BOT PARA GRUPO/CANAL VIP</b> 🔒
+
+<blockquote><b>Automatize o acesso ao seu conteúdo exclusivo!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>FUNCIONALIDADES:</b>
+
+<blockquote>✅ Pagamento via PIX automático
+✅ Liberação de acesso após confirmação
+✅ Expulsão automática de inadimplentes
+✅ Links de convite únicos e temporários
+✅ Gestão de múltiplos planos (mensal, trimestral, anual)
+✅ Comandos administrativos
+✅ Lista de membros ativos
+✅ Renovação automática
+✅ Lembretes de vencimento</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>COMO FUNCIONA:</b>
+
+<blockquote>1️⃣ Cliente paga via PIX
+2️⃣ Bot confirma pagamento automaticamente
+3️⃣ Bot envia link de convite único
+4️⃣ Cliente entra no grupo/canal
+5️⃣ Bot gerencia acesso e renovações</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+💰 <b>INVESTIMENTO:</b>
+
+<blockquote>A partir de <b>R$ XX</b> (sob consulta)
+<i>Valor varia conforme funcionalidades adicionais</i></blockquote>
+
+👇 <b>Solicite um orçamento personalizado:</b>
+"""
+
+MODEL_SALES_MESSAGE = """
+📦 <b>BOT PARA VENDAS AUTOMÁTICAS</b> 📦
+
+<blockquote><b>Venda packs, cursos, serviços e produtos digitais no piloto automático!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>FUNCIONALIDADES:</b>
+
+<blockquote>✅ Catálogo de produtos organizado
+✅ Pagamento via PIX automático
+✅ Entrega automática do produto após pagamento
+✅ Suporte a múltiplos produtos
+✅ Estoque e controle de vendas
+✅ Relatórios detalhados
+✅ Integração com gateways
+✅ Links de pagamento personalizados
+✅ Suporte a cupons de desconto</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>COMO FUNCIONA:</b>
+
+<blockquote>1️⃣ Cliente escolhe o produto no bot
+2️⃣ Bot gera PIX com valor do produto
+3️⃣ Após pagamento, bot entrega automaticamente
+4️⃣ Você recebe o valor na hora</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+💰 <b>INVESTIMENTO:</b>
+
+<blockquote>A partir de <b>R$ XX</b> (sob consulta)
+<i>Valor varia conforme quantidade de produtos e funcionalidades</i></blockquote>
+
+👇 <b>Solicite um orçamento personalizado:</b>
+"""
+
+MODEL_SUBSCRIPTION_MESSAGE = """
+🎟️ <b>BOT PARA ASSINATURAS RECORRENTES</b> 🎟️
+
+<blockquote><b>Sistema completo de cobrança recorrente para seu negócio!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>FUNCIONALIDADES:</b>
+
+<blockquote>✅ Cobrança automática mensal/semanal/anual
+✅ PIX automático com QR Code
+✅ Gestão de assinantes
+✅ Planos personalizáveis
+✅ Renovação automática
+✅ Cancelamento automático de inadimplentes
+✅ Histórico de pagamentos
+✅ Notificações de vencimento
+✅ Painel administrativo completo</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>COMO FUNCIONA:</b>
+
+<blockquote>1️⃣ Cliente escolhe plano de assinatura
+2️⃣ Bot gera cobrança recorrente
+3️⃣ Pagamentos são processados automaticamente
+4️⃣ Sistema gerencia renovações e cancelamentos</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+💰 <b>INVESTIMENTO:</b>
+
+<blockquote>A partir de <b>R$ XX</b> (sob consulta)
+<i>Valor varia conforme complexidade do sistema</i></blockquote>
+
+👇 <b>Solicite um orçamento personalizado:</b>
+"""
+
+REQUEST_QUOTE_MESSAGE = """
+💬 <b>SOLICITAR ORÇAMENTO</b> 💬
+
+<blockquote><i>Para solicitar um orçamento personalizado, entre em contato conosco através do nosso canal de mensagens diretas!</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+🤖 <b>Serviço:</b> <i>ORÇAMENTO BOT VIP</i>
+📝 <b>Descreva:</b> <i>O que você precisa para seu bot</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<i>Responderemos o mais rápido possível com um orçamento detalhado!</i>
+
+👇 <b>Clique abaixo para falar com o especialista:</b>
+"""

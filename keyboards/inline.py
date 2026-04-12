@@ -5,11 +5,12 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
+        [InlineKeyboardButton("🤖 BOT VIP", callback_data='bot_vip')], 
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
          InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("📖 Regras", callback_data='rules'),
-         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')],
-        [InlineKeyboardButton("⏰ Horários", callback_data='business_hours')]
+         InlineKeyboardButton("⏰ Horários", callback_data='business_hours'),
+         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -172,5 +173,33 @@ def out_of_hours_keyboard(from_screen='main'):
     keyboard = [
         [InlineKeyboardButton("⏰ VER HORÁRIOS", callback_data='business_hours')],
         [InlineKeyboardButton(back_text, callback_data=back_callback)]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+# NOVO - Teclado da área BOT VIP
+def bot_vip_keyboard():
+    """Teclado da área de BOT VIP"""
+    keyboard = [
+        [InlineKeyboardButton("💬 SOLICITAR ORÇAMENTO", callback_data='request_quote')],
+        [InlineKeyboardButton("📋 VER MODELOS", callback_data='bot_models')],
+        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def bot_models_keyboard():
+    """Teclado de modelos de bot"""
+    keyboard = [
+        [InlineKeyboardButton("🔒 BOT PARA GRUPO VIP", callback_data='model_vip_group')],
+        [InlineKeyboardButton("📦 BOT PARA VENDAS", callback_data='model_sales')],
+        [InlineKeyboardButton("🎟️ BOT PARA ASSINATURAS", callback_data='model_subscription')],
+        [InlineKeyboardButton("🔙 VOLTAR", callback_data='bot_vip')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def back_to_bot_vip_keyboard():
+    """Teclado para voltar à área BOT VIP"""
+    keyboard = [
+        [InlineKeyboardButton("🔙 VOLTAR PARA BOT VIP", callback_data='bot_vip')],
+        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
