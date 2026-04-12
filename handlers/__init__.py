@@ -18,12 +18,8 @@ from .services import (
     handle_recharges,
     handle_recharge_selection,
     handle_business_hours,
-    handle_bot_vip,           # 👈 NOVO
-    handle_bot_models,        # 👈 NOVO
-    handle_model_vip_group,   # 👈 NOVO
-    handle_model_sales,       # 👈 NOVO
-    handle_model_subscription,# 👈 NOVO
-    handle_request_quote      # 👈 NOVO
+    handle_bot_vip,           # ✅ Mantido
+    handle_request_quote      # ✅ Mantido
 )
 
 __all__ = [
@@ -35,6 +31,5 @@ __all__ = [
     'handle_partners', 'handle_help_menu', 'handle_how_it_works',
     'handle_deadlines', 'handle_payments', 'handle_rules',
     'handle_recharges', 'handle_recharge_selection', 'handle_business_hours',
-    'handle_bot_vip', 'handle_bot_models', 'handle_model_vip_group',
-    'handle_model_sales', 'handle_model_subscription', 'handle_request_quote'
+    'handle_bot_vip', 'handle_request_quote'
 ]
