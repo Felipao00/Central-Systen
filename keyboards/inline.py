@@ -166,6 +166,9 @@ def out_of_hours_keyboard(from_screen='main'):
     elif from_screen == 'recharges':
         back_callback = 'recharges'
         back_text = "🏠 Retornar"
+    elif from_screen == 'bot_vip':  # 👈 NOVO
+        back_callback = 'bot_vip'
+        back_text = "🏠 Retornar"   
     else:
         back_callback = 'back_to_main'
         back_text = "🏠 Início"

@@ -339,10 +339,33 @@ async def handle_bot_vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Remova as funções: handle_bot_models, handle_model_vip_group, handle_model_sales, handle_model_subscription
 
 async def handle_request_quote(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para SOLICITAR ORÇAMENTO"""
+    """Handler para SOLICITAR ORÇAMENTO - COM VERIFICAÇÃO DE HORÁRIO"""
     query = update.callback_query
     await query.answer()
     
+    # Verifica se está no horário de funcionamento
+    if not is_business_hours():
+        from messages.texts import OUT_OF_HOURS_MESSAGE
+        from keyboards.inline import out_of_hours_keyboard
+        
+        current_time = get_current_time_brasilia()
+        current_day = get_current_day_brasilia()
+        business_hours = get_business_hours_message()
+        
+        message = OUT_OF_HOURS_MESSAGE.format(
+            current_time=current_time,
+            current_day=current_day,
+            business_hours=business_hours
+        )
+        
+        await query.edit_message_text(
+            text=message,
+            reply_markup=out_of_hours_keyboard('bot_vip'),  # 👈 Volta para BOT VIP
+            parse_mode='HTML'
+        )
+        return
+    
+    # Só chega aqui se ESTIVER no horário
     keyboard = [
         [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
         [InlineKeyboardButton("🏠 Início", callback_data='bot_vip')]
