@@ -326,13 +326,36 @@ async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAUL
 # Adicione no final do arquivo:
 
 async def handle_bot_vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para o botão BOT VIP"""
+    """Handler para o botão BOT VIP - COM VERIFICAÇÃO DE HORÁRIO"""
     query = update.callback_query
     await query.answer()
     
+    # Verifica se está no horário de funcionamento
+    if not is_business_hours():
+        from messages.texts import OUT_OF_HOURS_MESSAGE
+        from keyboards.inline import out_of_hours_keyboard
+        
+        current_time = get_current_time_brasilia()
+        current_day = get_current_day_brasilia()
+        business_hours = get_business_hours_message()
+        
+        message = OUT_OF_HOURS_MESSAGE.format(
+            current_time=current_time,
+            current_day=current_day,
+            business_hours=business_hours
+        )
+        
+        await query.edit_message_text(
+            text=message,
+            reply_markup=out_of_hours_keyboard('main'),  # Volta para o menu principal
+            parse_mode='HTML'
+        )
+        return
+    
+    # Só chega aqui se ESTIVER no horário
     await query.edit_message_text(
         text=BOT_VIP_MESSAGE,
-        reply_markup=bot_vip_keyboard(),
+        reply_markup=bot_vip_keyboard(),  # Este teclado tem o botão "SOLICITAR AGORA"
         parse_mode='HTML'
     )
 
