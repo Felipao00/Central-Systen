@@ -5,10 +5,7 @@ WELCOME_MESSAGE = """
 
 <blockquote>🔍 Escolha o serviço que você adquiriu e fale diretamente com nosso especialista!
 
-😎 Com a <b>CENTRAL SYSTEN</b>, você tem:
-🔹 Atendimento rápido e personalizado
-🔹 Especialistas verificados
-🔹 100% de sigilo e segurança</blockquote>
+😎 A Central Systen possui atendimento personalizado e rápido!</blockquote>
 
 ❓ <b><i>Caso tenha dúvidas, acesse nosso menu de Ajuda ou Horários!</i></b>
 """
