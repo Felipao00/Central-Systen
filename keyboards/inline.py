@@ -5,7 +5,7 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
-        [InlineKeyboardButton("🤖 BOT VIP", callback_data='bot_vip')], 
+        [InlineKeyboardButton("🤖 Bot Vip", callback_data='bot_vip')], 
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
          InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("📖 Regras", callback_data='rules'),
