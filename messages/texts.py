@@ -349,11 +349,8 @@ OUT_OF_HOURS_MESSAGE = """
 ━━━━━━━━━━━━━━━━━━
 ✅ <b>Sua solicitação foi registrada!</b>
 
-<blockquote><b>Assim que estivermos online, um especialista </b>
-<b>entrará em contato para atendê-lo.</b></blockquote>
-
-💡 <i>Volte durante nosso horário de 
-funcionamento para atendimento imediato!</i>
+<blockquote>💡 <i>Volte durante nosso horário de 
+funcionamento para atendimento imediato!</i></blockquote>
 
 👇 <i>Você pode consultar nossos horários no menu principal.</i>
 """
