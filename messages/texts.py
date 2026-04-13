@@ -494,7 +494,7 @@ FF_ACCOUNTS_LIST_MESSAGE = """
 
 ━━━━━━━━━━━━━━━━━━
 
-<blockquote>No momento, estamos sem contas disponíveis, mas não se preocupe! Nosso estoque é renovado constantemente. Fale com nosso especialista para saber mais sobre as próximas disponibilizações e garantir a sua conta personalizada!</blockquote>
+<blockquote>⛔No momento, estamos sem contas disponíveis, mas não se preocupe! Nosso estoque é renovado constantemente. Fale com nosso especialista para saber mais sobre as próximas disponibilizações e garantir a sua conta personalizada!</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -510,31 +510,13 @@ FF_PRICES_MESSAGE = """
 
 <blockquote><b>Valores base - Consulte disponibilidade!</b></blockquote>
 
-━━━━━━━━━━━━━━━━━━
-
 <b>📊 CONTAS POR NÍVEL:</b>
 
-<blockquote>🏆 <b>Nível 70+</b> - A partir de <b>R$ XXX,XX</b>
-<i>Alok, Chrono, 15+ skins lendárias, 1000+ diamantes</i>
-
-🏆 <b>Nível 60+</b> - A partir de <b>R$ XXX,XX</b>
-<i>Alok, K, 10+ skins lendárias, 500+ diamantes</i>
-
-🏆 <b>Nível 50+</b> - A partir de <b>R$ XXX,XX</b>
-<i>Alok, 5+ skins lendárias, 300+ diamantes</i>
-
-🏆 <b>Nível 30+</b> - A partir de <b>R$ XXX,XX</b>
-<i>Alok, skins básicas, 200+ diamantes</i></blockquote>
-
-━━━━━━━━━━━━━━━━━━
+<blockquote>🔥 Vamos disponibilizar os requisitos das contas vendidas pela central logo mais. Aguarde!</blockquote>
 
 <b>🎨 SKINS EXTRAS (ADICIONAL):</b>
 
-<blockquote>🔫 Skin de arma lendária: + R$ XX,XX
-👤 Personagem extra: + R$ XX,XX
-💎 Pacote de diamantes: + R$ XX,XX</blockquote>
-
-━━━━━━━━━━━━━━━━━━
+<blockquote>📍 Em Desenvolvimento</blockquote>
 
 <b>💳 FORMAS DE PAGAMENTO:</b>
 
@@ -547,12 +529,12 @@ FF_PRICES_MESSAGE = """
 REQUEST_FF_ACCOUNT_MESSAGE = """
 💬 <b>SOLICITAR CONTA FREE FIRE</b> 💬
 
-<blockquote><i>Garanta já sua conta de Free Fire com Tio Duck!</i></blockquote>
+<blockquote><i>Garanta já sua conta de Free Fire!</i></blockquote>
 
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>TIO DUCK</i>
+<blockquote>👤 <b>Especialista:</b> <i>Central</i>
 🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 🎮 <b>Serviço:</b> <i>CONTA FREE FIRE</i>
 📝 <b>Informe:</b>
@@ -561,7 +543,7 @@ REQUEST_FF_ACCOUNT_MESSAGE = """
 
 ━━━━━━━━━━━━━━━━━━
 ⚡ <i>Entrega imediata após confirmação do pagamento!</i>
-🛡️ <i>Garantia de 7 dias contra recuperação!</i>
+🛡️ <i>Garantia de 3 dias contra recuperação!</i>
 
 👇 <b>Clique abaixo para falar com Tio Duck:</b>
 """

@@ -193,26 +193,26 @@ def bot_vip_keyboard():
 def ff_accounts_keyboard():
     """Teclado da área de CONTAS FREE FIRE"""
     keyboard = [
-        [InlineKeyboardButton("💰 VER CONTAS DISPONÍVEIS", callback_data='ff_accounts_list')],
-        [InlineKeyboardButton("📊 VER PREÇOS", callback_data='ff_prices')],
-        [InlineKeyboardButton("💬 SOLICITAR CONTA", callback_data='request_ff_account')],
-        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+        [InlineKeyboardButton("💰 Contas Disponíveis", callback_data='ff_accounts_list')],
+        [InlineKeyboardButton("📊 Ver Preços", callback_data='ff_prices')],
+        [InlineKeyboardButton("💬 Solicitar Conta", callback_data='request_ff_account')],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def ff_accounts_list_keyboard():
     """Teclado da lista de contas"""
     keyboard = [
-        [InlineKeyboardButton("🔙 VOLTAR PARA CONTAS FF", callback_data='ff_accounts')],
-        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts')],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def ff_prices_keyboard():
     """Teclado de preços"""
     keyboard = [
-        [InlineKeyboardButton("💬 SOLICITAR CONTA", callback_data='request_ff_account')],
-        [InlineKeyboardButton("🔙 VOLTAR PARA CONTAS FF", callback_data='ff_accounts')],
-        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
+        [InlineKeyboardButton("💬 Solicitar Conta", callback_data='request_ff_account')],
+        [InlineKeyboardButton("🔙 Retornar", callback_data='ff_accounts')],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
