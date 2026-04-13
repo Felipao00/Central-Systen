@@ -445,3 +445,150 @@ REQUEST_QUOTE_MESSAGE = """
 
 👇 <b>Clique abaixo para falar com o especialista:</b>
 """
+
+# Adicione no final do arquivo:
+
+FF_ACCOUNTS_MESSAGE = """
+🎮 <b>CONTAS FREE FIRE - TIO DUCK</b> 🎮
+
+<blockquote><b>Contas de Free Fire de alta qualidade, seguras e com garantia!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>🔥 O QUE OFERECEMOS:</b>
+
+<blockquote>✅ Contas niveladas e prontas para jogar
+✅ Skins lendárias e raras
+✅ Personagens desbloqueados
+✅ Pets e emotes exclusivos
+✅ Diamantes e ouro na conta
+✅ Passe de elite ativo
+✅ Troca de email e senha na hora
+✅ Garantia de 7 dias</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>🛡️ SEGURANÇA E GARANTIA:</b>
+
+<blockquote>🔒 Contas 100% seguras e verificadas
+📧 Email e senha originais
+🔄 Suporte para troca de dados
+✅ Garantia de 7 dias contra recuperação
+⚡ Entrega imediata após pagamento</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>📋 COMO COMPRAR:</b>
+
+<blockquote>1️⃣ Clique em "VER CONTAS DISPONÍVEIS"
+2️⃣ Escolha a conta que deseja
+3️⃣ Clique em "SOLICITAR CONTA"
+4️⃣ Fale com o especialista Tio Duck
+5️⃣ Realize o pagamento via PIX
+6️⃣ Receba os dados da conta na hora!</blockquote>
+
+<blockquote><i>👤 Especialista responsável: TIO DUCK</i></blockquote>
+
+👇 <i>Escolha uma opção abaixo:</i>
+"""
+
+FF_ACCOUNTS_LIST_MESSAGE = """
+📋 <b>CONTAS FREE FIRE DISPONÍVEIS</b> 📋
+
+<blockquote><i>Estoque atualizado diariamente!</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>🔥 CONTA NÍVEL 70+</b>
+<blockquote>🏆 Nível: 70+
+👤 Personagens: Alok, Chrono, Skyler
+🎨 Skins: 15+ lendárias
+💎 Diamantes: 1000+
+🐾 Pets: Falcão, Panda
+💰 <b>VALOR: R$ XX,XX</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>🔥 CONTA NÍVEL 60+</b>
+<blockquote>🏆 Nível: 60+
+👤 Personagens: Alok, K, D-bee
+🎨 Skins: 10+ lendárias
+💎 Diamantes: 500+
+🐾 Pets: Gato, Cachorro
+💰 <b>VALOR: R$ XX,XX</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>🔥 CONTA INICIANTE PREMIUM</b>
+<blockquote>🏆 Nível: 30+
+👤 Personagens: Alok, Hayato
+🎨 Skins: 5+ lendárias
+💎 Diamantes: 200+
+💰 <b>VALOR: R$ XX,XX</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>🎯 CONTAS PERSONALIZADAS</b>
+<blockquote><i>Não encontrou o que queria?
+Solicite uma conta personalizada com as skins e personagens que você deseja!</i></blockquote>
+
+👇 <i>Clique abaixo para solicitar sua conta:</i>
+"""
+
+FF_PRICES_MESSAGE = """
+💰 <b>TABELA DE PREÇOS - CONTAS FREE FIRE</b> 💰
+
+<blockquote><b>Valores base - Consulte disponibilidade!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>📊 CONTAS POR NÍVEL:</b>
+
+<blockquote>🏆 <b>Nível 70+</b> - A partir de <b>R$ XXX,XX</b>
+<i>Alok, Chrono, 15+ skins lendárias, 1000+ diamantes</i>
+
+🏆 <b>Nível 60+</b> - A partir de <b>R$ XXX,XX</b>
+<i>Alok, K, 10+ skins lendárias, 500+ diamantes</i>
+
+🏆 <b>Nível 50+</b> - A partir de <b>R$ XXX,XX</b>
+<i>Alok, 5+ skins lendárias, 300+ diamantes</i>
+
+🏆 <b>Nível 30+</b> - A partir de <b>R$ XXX,XX</b>
+<i>Alok, skins básicas, 200+ diamantes</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>🎨 SKINS EXTRAS (ADICIONAL):</b>
+
+<blockquote>🔫 Skin de arma lendária: + R$ XX,XX
+👤 Personagem extra: + R$ XX,XX
+💎 Pacote de diamantes: + R$ XX,XX</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>💳 FORMAS DE PAGAMENTO:</b>
+
+<blockquote>✅ PIX (Pagamento instantâneo)
+✅ Entrega imediata após confirmação</blockquote>
+
+👇 <i>Solicite sua conta agora:</i>
+"""
+
+REQUEST_FF_ACCOUNT_MESSAGE = """
+💬 <b>SOLICITAR CONTA FREE FIRE</b> 💬
+
+<blockquote><i>Garanta já sua conta de Free Fire com Tio Duck!</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>TIO DUCK</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+🎮 <b>Serviço:</b> <i>CONTA FREE FIRE</i>
+📝 <b>Informe:</b>
+  • Qual conta deseja (nível/personagens)
+  • Ou descreva a conta dos sonhos</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+⚡ <i>Entrega imediata após confirmação do pagamento!</i>
+🛡️ <i>Garantia de 7 dias contra recuperação!</i>
+
+👇 <b>Clique abaixo para falar com Tio Duck:</b>
+"""

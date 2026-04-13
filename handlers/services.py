@@ -399,3 +399,79 @@ async def handle_request_quote(update: Update, context: ContextTypes.DEFAULT_TYP
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode='HTML'
     )
+
+# Adicione no final do arquivo:
+
+async def handle_ff_accounts(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para o botão CONTAS FF"""
+    query = update.callback_query
+    await query.answer()
+    
+    await query.edit_message_text(
+        text=FF_ACCOUNTS_MESSAGE,
+        reply_markup=ff_accounts_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_ff_accounts_list(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para VER CONTAS DISPONÍVEIS"""
+    query = update.callback_query
+    await query.answer()
+    
+    await query.edit_message_text(
+        text=FF_ACCOUNTS_LIST_MESSAGE,
+        reply_markup=ff_accounts_list_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_ff_prices(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para VER PREÇOS"""
+    query = update.callback_query
+    await query.answer()
+    
+    await query.edit_message_text(
+        text=FF_PRICES_MESSAGE,
+        reply_markup=ff_prices_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_request_ff_account(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para SOLICITAR CONTA FF - COM VERIFICAÇÃO DE HORÁRIO"""
+    query = update.callback_query
+    await query.answer()
+    
+    # Verifica se está no horário de funcionamento
+    if not is_business_hours():
+        from messages.texts import OUT_OF_HOURS_MESSAGE
+        from keyboards.inline import out_of_hours_keyboard
+        
+        current_time = get_current_time_brasilia()
+        current_day = get_current_day_brasilia()
+        business_hours = get_business_hours_message()
+        
+        message = OUT_OF_HOURS_MESSAGE.format(
+            current_time=current_time,
+            current_day=current_day,
+            business_hours=business_hours
+        )
+        
+        await query.edit_message_text(
+            text=message,
+            reply_markup=out_of_hours_keyboard('ff_accounts'),
+            parse_mode='HTML'
+        )
+        return
+    
+    # Link do Tio Duck (ou canal)
+    from config import CANAL_LINK
+    
+    keyboard = [
+        [InlineKeyboardButton("💬 FALAR COM TIO DUCK - CONTAS FF", url=CANAL_LINK)],
+        [InlineKeyboardButton("🔙 VOLTAR PARA CONTAS FF", callback_data='ff_accounts')]
+    ]
+    
+    await query.edit_message_text(
+        text=REQUEST_FF_ACCOUNT_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )

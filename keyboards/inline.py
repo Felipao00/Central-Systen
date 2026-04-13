@@ -5,7 +5,8 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
-        [InlineKeyboardButton("🤖 Bot Vip", callback_data='bot_vip')], 
+        [InlineKeyboardButton("🤖 Bot Vip", callback_data='bot_vip'),
+         InlineKeyboardButton("🎮 Contas FF", callback_data='ff_accounts')], 
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
          InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("📖 Regras", callback_data='rules'),
@@ -185,5 +186,33 @@ def bot_vip_keyboard():
     keyboard = [
         [InlineKeyboardButton("💬 Falar Com Especialista", callback_data='request_quote')],
         [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+# NOVO - Teclado da área FREE FIRE
+def ff_accounts_keyboard():
+    """Teclado da área de CONTAS FREE FIRE"""
+    keyboard = [
+        [InlineKeyboardButton("💰 VER CONTAS DISPONÍVEIS", callback_data='ff_accounts_list')],
+        [InlineKeyboardButton("📊 VER PREÇOS", callback_data='ff_prices')],
+        [InlineKeyboardButton("💬 SOLICITAR CONTA", callback_data='request_ff_account')],
+        [InlineKeyboardButton("🔙 VOLTAR", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def ff_accounts_list_keyboard():
+    """Teclado da lista de contas"""
+    keyboard = [
+        [InlineKeyboardButton("🔙 VOLTAR PARA CONTAS FF", callback_data='ff_accounts')],
+        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def ff_prices_keyboard():
+    """Teclado de preços"""
+    keyboard = [
+        [InlineKeyboardButton("💬 SOLICITAR CONTA", callback_data='request_ff_account')],
+        [InlineKeyboardButton("🔙 VOLTAR PARA CONTAS FF", callback_data='ff_accounts')],
+        [InlineKeyboardButton("🏠 MENU PRINCIPAL", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)

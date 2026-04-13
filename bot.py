@@ -70,6 +70,11 @@ if __name__ == '__main__':
     # Callbacks do BOT VIP
     application.add_handler(CallbackQueryHandler(handle_bot_vip, pattern='^bot_vip$'))
     application.add_handler(CallbackQueryHandler(handle_request_quote, pattern='^request_quote$'))
+    # Callbacks do FREE FIRE
+    application.add_handler(CallbackQueryHandler(handle_ff_accounts, pattern='^ff_accounts$'))
+    application.add_handler(CallbackQueryHandler(handle_ff_accounts_list, pattern='^ff_accounts_list$'))
+    application.add_handler(CallbackQueryHandler(handle_ff_prices, pattern='^ff_prices$'))
+    application.add_handler(CallbackQueryHandler(handle_request_ff_account, pattern='^request_ff_account$'))
     
     # Configurar menu de comandos
     application.post_init = set_bot_commands
