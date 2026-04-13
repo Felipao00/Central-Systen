@@ -20,6 +20,7 @@ def services_keyboard():
     keyboard = [
         [InlineKeyboardButton("🔍 Consultas", callback_data='consultas')],
         [InlineKeyboardButton("💳 Cartões", callback_data='cards')],
+        [InlineKeyboardButton("💸 Notas Fake", callback_data='fake_notes')],
         [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
