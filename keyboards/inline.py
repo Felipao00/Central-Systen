@@ -212,7 +212,7 @@ def ff_prices_keyboard():
     """Teclado de preços"""
     keyboard = [
         [InlineKeyboardButton("💬 Solicitar Conta", callback_data='request_ff_account')],
-        [InlineKeyboardButton("🔙 Retornar", callback_data='ff_accounts')],
+        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts')],
         [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
