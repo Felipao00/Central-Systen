@@ -449,7 +449,7 @@ REQUEST_QUOTE_MESSAGE = """
 # Adicione no final do arquivo:
 
 FF_ACCOUNTS_MESSAGE = """
-🎮 <b>CONTAS FREE FIRE - TIO DUCK</b> 🎮
+🎮 <b>CONTAS FREE FIRE</b> 🎮
 
 <blockquote><b>Contas de Free Fire de alta qualidade, seguras e com garantia!</b></blockquote>
 
@@ -480,11 +480,9 @@ FF_ACCOUNTS_MESSAGE = """
 <blockquote>1️⃣ Clique em "VER CONTAS DISPONÍVEIS"
 2️⃣ Escolha a conta que deseja
 3️⃣ Clique em "SOLICITAR CONTA"
-4️⃣ Fale com o especialista Tio Duck
+4️⃣ Fale com o nosso especialista
 5️⃣ Realize o pagamento via PIX
 6️⃣ Receba os dados da conta na hora!</blockquote>
-
-<blockquote><i>👤 Especialista responsável: TIO DUCK</i></blockquote>
 
 👇 <i>Escolha uma opção abaixo:</i>
 """
@@ -496,32 +494,7 @@ FF_ACCOUNTS_LIST_MESSAGE = """
 
 ━━━━━━━━━━━━━━━━━━
 
-<b>🔥 CONTA NÍVEL 70+</b>
-<blockquote>🏆 Nível: 70+
-👤 Personagens: Alok, Chrono, Skyler
-🎨 Skins: 15+ lendárias
-💎 Diamantes: 1000+
-🐾 Pets: Falcão, Panda
-💰 <b>VALOR: R$ XX,XX</b></blockquote>
-
-━━━━━━━━━━━━━━━━━━
-
-<b>🔥 CONTA NÍVEL 60+</b>
-<blockquote>🏆 Nível: 60+
-👤 Personagens: Alok, K, D-bee
-🎨 Skins: 10+ lendárias
-💎 Diamantes: 500+
-🐾 Pets: Gato, Cachorro
-💰 <b>VALOR: R$ XX,XX</b></blockquote>
-
-━━━━━━━━━━━━━━━━━━
-
-<b>🔥 CONTA INICIANTE PREMIUM</b>
-<blockquote>🏆 Nível: 30+
-👤 Personagens: Alok, Hayato
-🎨 Skins: 5+ lendárias
-💎 Diamantes: 200+
-💰 <b>VALOR: R$ XX,XX</b></blockquote>
+<blockquote>No momento, estamos sem contas disponíveis, mas não se preocupe! Nosso estoque é renovado constantemente. Fale com nosso especialista para saber mais sobre as próximas disponibilizações e garantir a sua conta personalizada!</blockquote>
 
 ━━━━━━━━━━━━━━━━━━
 
