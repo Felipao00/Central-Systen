@@ -466,8 +466,8 @@ async def handle_request_ff_account(update: Update, context: ContextTypes.DEFAUL
     from config import CANAL_LINK
     
     keyboard = [
-        [InlineKeyboardButton("💬 FALAR COM TIO DUCK - CONTAS FF", url=CANAL_LINK)],
-        [InlineKeyboardButton("🔙 VOLTAR PARA CONTAS FF", callback_data='ff_accounts')]
+        [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
+        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts')]
     ]
     
     await query.edit_message_text(
