@@ -475,3 +475,76 @@ async def handle_request_ff_account(update: Update, context: ContextTypes.DEFAUL
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode='HTML'
     )
+
+async def handle_fake_notes(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para o botão NOTAS FALSAS"""
+    query = update.callback_query
+    await query.answer()
+    
+    await query.edit_message_text(
+        text=FAKE_NOTES_MESSAGE,
+        reply_markup=fake_notes_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_fake_notes_prices(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para VER VALORES"""
+    query = update.callback_query
+    await query.answer()
+    
+    await query.edit_message_text(
+        text=FAKE_NOTES_PRICES_MESSAGE,
+        reply_markup=fake_notes_back_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_fake_notes_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para COMO FUNCIONA"""
+    query = update.callback_query
+    await query.answer()
+    
+    await query.edit_message_text(
+        text=FAKE_NOTES_INFO_MESSAGE,
+        reply_markup=fake_notes_back_keyboard(),
+        parse_mode='HTML'
+    )
+
+async def handle_request_fake_notes(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handler para SOLICITAR NOTAS - COM VERIFICAÇÃO DE HORÁRIO"""
+    query = update.callback_query
+    await query.answer()
+    
+    # Verifica se está no horário de funcionamento
+    if not is_business_hours():
+        from messages.texts import OUT_OF_HOURS_MESSAGE
+        from keyboards.inline import out_of_hours_keyboard
+        
+        current_time = get_current_time_brasilia()
+        current_day = get_current_day_brasilia()
+        business_hours = get_business_hours_message()
+        
+        message = OUT_OF_HOURS_MESSAGE.format(
+            current_time=current_time,
+            current_day=current_day,
+            business_hours=business_hours
+        )
+        
+        await query.edit_message_text(
+            text=message,
+            reply_markup=out_of_hours_keyboard('fake_notes'),
+            parse_mode='HTML'
+        )
+        return
+    
+    from config import CANAL_LINK
+    
+    keyboard = [
+        [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
+        [InlineKeyboardButton("🏡 Retornar", callback_data='fake_notes')]
+    ]
+    
+    await query.edit_message_text(
+        text=REQUEST_FAKE_NOTES_MESSAGE,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='HTML'
+    )

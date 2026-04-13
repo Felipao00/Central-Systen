@@ -75,6 +75,11 @@ if __name__ == '__main__':
     application.add_handler(CallbackQueryHandler(handle_ff_accounts_list, pattern='^ff_accounts_list$'))
     application.add_handler(CallbackQueryHandler(handle_ff_prices, pattern='^ff_prices$'))
     application.add_handler(CallbackQueryHandler(handle_request_ff_account, pattern='^request_ff_account$'))
+    # Callbacks do NOTAS FALSAS
+    application.add_handler(CallbackQueryHandler(handle_fake_notes, pattern='^fake_notes$'))
+    application.add_handler(CallbackQueryHandler(handle_fake_notes_prices, pattern='^fake_notes_prices$'))
+    application.add_handler(CallbackQueryHandler(handle_fake_notes_info, pattern='^fake_notes_info$'))
+    application.add_handler(CallbackQueryHandler(handle_request_fake_notes, pattern='^request_fake_notes$'))
     
     # Configurar menu de comandos
     application.post_init = set_bot_commands

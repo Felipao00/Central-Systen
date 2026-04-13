@@ -547,3 +547,158 @@ REQUEST_FF_ACCOUNT_MESSAGE = """
 
 👇 <b>Clique abaixo para falar com Tio Duck:</b>
 """
+
+FAKE_NOTES_MESSAGE = """
+💵 <b>NOTAS FALSAS - ALTA QUALIDADE</b> 💵
+
+<blockquote><b>Notas falsas de alta qualidade, idênticas às reais!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>🔥 O QUE OFERECEMOS:</b>
+
+<blockquote>✅ Notas que passam no teste da caneta
+✅ Marca d'água e alto relevo
+✅ Fita de segurança holográfica
+✅ Numeração individual por nota
+✅ Qualidade superior AAA+
+✅ Entrega discreta e segura
+✅ Embalagem camuflada
+✅ Rastreio disponível</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>📦 VALORES DISPONÍVEIS:</b>
+
+<blockquote>💵 R$ 20,00
+💵 R$ 50,00
+💵 R$ 100,00
+💵 R$ 200,00</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+<b>📋 COMO COMPRAR:</b>
+
+<blockquote>1️⃣ Clique em "VER VALORES" para ver os preços
+2️⃣ Escolha a quantidade e valor das notas
+3️⃣ Clique em "SOLICITAR NOTAS"
+4️⃣ Fale com o especialista
+5️⃣ Realize o pagamento
+6️⃣ Receba seu pedido discretamente</blockquote>
+
+<blockquote><i>👤 Especialista responsável: GHOST</i></blockquote>
+
+👇 <i>Escolha uma opção abaixo:</i>
+"""
+
+FAKE_NOTES_PRICES_MESSAGE = """
+💰 <b>TABELA DE PREÇOS - NOTAS FALSAS</b> 💰
+
+<blockquote><b>Qualidade AAA+ - As melhores do mercado!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>💵 NOTA DE R$ 20,00</b>
+<blockquote>📦 10 unidades: R$ XX,XX
+📦 20 unidades: R$ XX,XX
+📦 50 unidades: R$ XX,XX
+📦 100 unidades: R$ XX,XX</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>💵 NOTA DE R$ 50,00</b>
+<blockquote>📦 10 unidades: R$ XX,XX
+📦 20 unidades: R$ XX,XX
+📦 50 unidades: R$ XX,XX
+📦 100 unidades: R$ XX,XX</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>💵 NOTA DE R$ 100,00</b>
+<blockquote>📦 10 unidades: R$ XX,XX
+📦 20 unidades: R$ XX,XX
+📦 50 unidades: R$ XX,XX
+📦 100 unidades: R$ XX,XX</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>💵 NOTA DE R$ 200,00</b>
+<blockquote>📦 10 unidades: R$ XX,XX
+📦 20 unidades: R$ XX,XX
+📦 50 unidades: R$ XX,XX
+📦 100 unidades: R$ XX,XX</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>🎁 KIT MISTO (TODOS OS VALORES)</b>
+<blockquote>📦 40 unidades (10 de cada): R$ XX,XX
+📦 80 unidades (20 de cada): R$ XX,XX
+📦 200 unidades (50 de cada): R$ XX,XX</blockquote>
+
+👇 <i>Solicite agora seu pedido:</i>
+"""
+
+FAKE_NOTES_INFO_MESSAGE = """
+📋 <b>COMO FUNCIONA - NOTAS FALSAS</b> 📋
+
+<blockquote><b>Tudo que você precisa saber sobre nossas notas!</b></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>✅ QUALIDADE GARANTIDA:</b>
+
+<blockquote>🔹 Passam no teste da caneta
+🔹 Marca d'água visível contra luz
+🔹 Alto relevo perceptível ao toque
+🔹 Fita holográfica brilhante
+🔹 Numeração individual
+🔹 Tamanho e cor idênticos</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>📦 ENVIO E ENTREGA:</b>
+
+<blockquote>🚚 Envio discreto em embalagem camuflada
+📮 Sedex ou PAC (com rastreio)
+⏱️ Prazo de entrega: 3 a 7 dias úteis
+🔒 Seus dados 100% seguros</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>💳 PAGAMENTO:</b>
+
+<blockquote>✅ PIX (Pagamento instantâneo)
+✅ Criptomoedas (consulte)
+✅ Envio após confirmação do pagamento</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+
+<b>⚠️ GARANTIA:</b>
+
+<blockquote>🛡️ Garantia de 7 dias contra defeitos
+🔄 Troca em caso de problemas na entrega
+📞 Suporte via Telegram</blockquote>
+
+👇 <i>Pronto para comprar? Solicite agora:</i>
+"""
+
+REQUEST_FAKE_NOTES_MESSAGE = """
+💬 <b>SOLICITAR NOTAS FALSAS</b> 💬
+
+<blockquote><i>Garanta já suas notas de alta qualidade!</i></blockquote>
+
+━━━━━━━━━━━━━━━━━━
+📋 <b>ENVIE NO CHAT DO CANAL:</b>
+
+<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
+🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+💵 <b>Serviço:</b> <i>NOTAS FALSAS</i>
+📝 <b>Informe:</b>
+  • Qual valor de nota deseja
+  • Quantidade desejada
+  • Endereço para envio (com CEP)</blockquote>
+
+━━━━━━━━━━━━━━━━━━
+⚡ <i>Entrega em 3 a 7 dias úteis após pagamento!</i>
+🛡️ <i>Garantia de qualidade AAA+!</i>
+📮 <i>Envio discreto e seguro!</i>
+
+👇 <b>Clique abaixo para falar com Ghost:</b>
+"""

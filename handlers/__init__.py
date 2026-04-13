@@ -23,7 +23,11 @@ from .services import (
     handle_ff_accounts,
     handle_ff_accounts_list,
     handle_ff_prices,
-    handle_request_ff_account
+    handle_request_ff_account,
+    handle_fake_notes,
+    handle_fake_notes_prices,
+    handle_fake_notes_info,
+    handle_request_fake_notes
 )
 
 __all__ = [
@@ -55,5 +59,9 @@ __all__ = [
     'handle_ff_accounts',
     'handle_ff_accounts_list',
     'handle_ff_prices',
-    'handle_request_ff_account'
+    'handle_request_ff_account',
+    'handle_fake_notes',
+    'handle_fake_notes_prices',
+    'handle_fake_notes_info',
+    'handle_request_fake_notes'
 ]

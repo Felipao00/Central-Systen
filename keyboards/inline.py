@@ -170,7 +170,12 @@ def out_of_hours_keyboard(from_screen='main'):
         back_text = "🏠 Retornar"
     elif from_screen == 'bot_vip':  # 👈 NOVO
         back_callback = 'bot_vip'
-        back_text = "🏠 Retornar"   
+    elif from_screen == 'ff_accounts':  # 👈 NOVO
+        back_callback = 'ff_accounts'
+        back_text = "🏠 Retornar"
+    elif from_screen == 'fake_notes':  # 👈 NOVO
+        back_callback = 'fake_notes'
+        back_text = "🏠 Retornar"
     else:
         back_callback = 'back_to_main'
         back_text = "🏠 Início"
@@ -213,6 +218,25 @@ def ff_prices_keyboard():
     """Teclado de preços"""
     keyboard = [
         [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts')],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def fake_notes_keyboard():
+    """Teclado da área de NOTAS FALSAS"""
+    keyboard = [
+        [InlineKeyboardButton("💰 Ver Valores", callback_data='fake_notes_prices')],
+        [InlineKeyboardButton("📋 Como Funciona", callback_data='fake_notes_info')],
+        [InlineKeyboardButton("💬 Solicitar Notas", callback_data='request_fake_notes')],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+def fake_notes_back_keyboard():
+    """Teclado para voltar à área de notas falsas"""
+    keyboard = [
+        [InlineKeyboardButton("💬 Solicitar Notas", callback_data='request_fake_notes')],
+        [InlineKeyboardButton("🏡 Retornar", callback_data='fake_notes')],
         [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
     ]
     return InlineKeyboardMarkup(keyboard)
