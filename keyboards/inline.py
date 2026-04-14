@@ -5,6 +5,7 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
+        [InlineKeyboardButton("💎 Comunidade Secreta", url="https://t.me/centralschoolofcbot")],
         [InlineKeyboardButton("🤖 Bot Vip", callback_data='bot_vip'),
          InlineKeyboardButton("🎮 Contas FF", callback_data='ff_accounts')], 
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
