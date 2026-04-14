@@ -23,7 +23,7 @@ async def handle_consultas(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     
     await query.edit_message_text(
-        text="🔍 <b>SERVIÇOS DE CONSULTA</b>\n\n<i>Selecione o serviço adquirido:</i>",
+        text="🔍 <b>SERVIÇOS DE CONSULTA</b>\n\n<i>Selecione logo abaixo o serviço que você adquiriu em nosso site:</i>",
         reply_markup=consultas_keyboard(),
         parse_mode='HTML'
     )
