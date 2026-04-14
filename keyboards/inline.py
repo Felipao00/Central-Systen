@@ -9,7 +9,7 @@ def main_menu_keyboard():
     """Teclado principal do bot"""
     keyboard = [
         [InlineKeyboardButton("🤝 Parceiros", callback_data='partners')],
-        [InlineKeyboardButton("💎 Comunidade Vip Secreta", url="https://t.me/centralschoolofcbot")],
+        [InlineKeyboardButton("💎 Comunidade Vip Secreta", url="https://t.me/centralschoolofcbot", style="primary")],
         [InlineKeyboardButton("🤖 Bot Vip", callback_data='bot_vip'),
          InlineKeyboardButton("🎮 Contas FF", callback_data='ff_accounts')], 
         [InlineKeyboardButton("🛒 Serviços", callback_data='service_acquired'),
@@ -30,31 +30,31 @@ def services_keyboard():
         [InlineKeyboardButton("🔍 Consultas", callback_data='consultas')],
         [InlineKeyboardButton("💳 Cartões", callback_data='cards')],
         [InlineKeyboardButton("💸 Notas Fake", callback_data='fake_notes')],
-        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def consultas_keyboard():
     """Teclado de consultas - Ghost e Tio Duck"""
     keyboard = [
-        [InlineKeyboardButton("📄 Consulta CPF", callback_data='service_CPF'),
-         InlineKeyboardButton("🏢 Consulta CNPJ", callback_data='service_CNPJ')],
-        [InlineKeyboardButton("📍 Consulta CEP", callback_data='service_CEP'),
-         InlineKeyboardButton("👤 Consulta NOME", callback_data='service_NOME')],
-        [InlineKeyboardButton("📱 Consulta TELEFONE", callback_data='service_TELEFONE'),
-         InlineKeyboardButton("🚗 Consulta PLACA", callback_data='service_PLACA')],
-        [InlineKeyboardButton("💳 Consulta BIN", callback_data='service_BIN'),
-         InlineKeyboardButton("🌐 Consulta IP", callback_data='service_IP')],
-        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_services')]
+        [InlineKeyboardButton("📄 Consulta CPF", callback_data='service_CPF', style="success"),
+         InlineKeyboardButton("🏢 Consulta CNPJ", callback_data='service_CNPJ', style="success")],
+        [InlineKeyboardButton("📍 Consulta CEP", callback_data='service_CEP', style="success"),
+         InlineKeyboardButton("👤 Consulta NOME", callback_data='service_NOME', style="primary")],
+        [InlineKeyboardButton("📱 Consulta TELEFONE", callback_data='service_TELEFONE', style="primary"),
+         InlineKeyboardButton("🚗 Consulta PLACA", callback_data='service_PLACA', style="primary")],
+        [InlineKeyboardButton("💳 Consulta BIN", callback_data='service_BIN', style="primary"),
+         InlineKeyboardButton("🌐 Consulta IP", callback_data='service_IP', style="success")],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_services', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def cards_keyboard():
     """Teclado de serviços de cartão"""
     keyboard = [
-        [InlineKeyboardButton("💳 Info CC S/Verificação", callback_data='card_no_verification')],
-        [InlineKeyboardButton("✅ Info CC Verificado", callback_data='card_verified')],
-        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+        [InlineKeyboardButton("💳 Info CC S/Verificação", callback_data='card_no_verification', style="danger")],
+        [InlineKeyboardButton("✅ Info CC Verificado", callback_data='card_verified', style="success")],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -65,10 +65,10 @@ def cards_keyboard():
 def recharges_keyboard():
     """Teclado de operadoras de recarga"""
     keyboard = [
-        [InlineKeyboardButton("🔴 Claro", callback_data='recharge_CLARO')],
-        [InlineKeyboardButton("🔵 Tim", callback_data='recharge_TIM')],
-        [InlineKeyboardButton("🟣 Vivo", callback_data='recharge_VIVO')],
-        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+        [InlineKeyboardButton("🔴 Claro", callback_data='recharge_CLARO', style="danger")],
+        [InlineKeyboardButton("🔵 Tim", callback_data='recharge_TIM', style="primary")],
+        [InlineKeyboardButton("🟣 Vivo", callback_data='recharge_VIVO', style="success")],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -97,8 +97,8 @@ def recharge_specialist_keyboard(operator, from_screen='recharges', user_id=None
 def bot_vip_keyboard():
     """Teclado da área de BOT VIP"""
     keyboard = [
-        [InlineKeyboardButton("💬 Falar Com Especialista", callback_data='request_quote')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("💬 Falar Com Especialista", callback_data='request_quote', style="success")],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -112,24 +112,24 @@ def ff_accounts_keyboard():
         [InlineKeyboardButton("💰 Contas Disponíveis", callback_data='ff_accounts_list')],
         [InlineKeyboardButton("📊 Ver Preços", callback_data='ff_prices')],
         [InlineKeyboardButton("💬 Solicitar Conta", callback_data='request_ff_account')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def ff_accounts_list_keyboard():
     """Teclado da lista de contas"""
     keyboard = [
-        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts', style="primary")],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def ff_prices_keyboard():
     """Teclado de preços"""
     keyboard = [
-        [InlineKeyboardButton("💬 Solicitar Conta", callback_data='request_ff_account')],
-        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("💬 Solicitar Conta", callback_data='request_ff_account', style="success")],
+        [InlineKeyboardButton("🏡 Retornar", callback_data='ff_accounts', style="primary")],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -143,16 +143,16 @@ def fake_notes_keyboard():
         [InlineKeyboardButton("💰 Ver Valores", callback_data='fake_notes_prices')],
         [InlineKeyboardButton("📋 Como Funciona", callback_data='fake_notes_info')],
         [InlineKeyboardButton("💬 Solicitar Notas", callback_data='request_fake_notes')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def fake_notes_back_keyboard():
     """Teclado para voltar à área de notas falsas"""
     keyboard = [
-        [InlineKeyboardButton("💬 Solicitar Notas", callback_data='request_fake_notes')],
-        [InlineKeyboardButton("🏡 Retornar", callback_data='fake_notes')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("💬 Solicitar Notas", callback_data='request_fake_notes', style="success")],
+        [InlineKeyboardButton("🏡 Retornar", callback_data='fake_notes', style="primary")],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -163,26 +163,26 @@ def fake_notes_back_keyboard():
 def partners_keyboard():
     """Teclado da área de parceiros"""
     keyboard = [
-        [InlineKeyboardButton("💳 Gateway", url="https://t.me/pibankofc_bot")],
-        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+        [InlineKeyboardButton("💳 Gateway", url="https://t.me/pibankofc_bot", style="success")],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def help_menu_keyboard():
     """Teclado do menu de ajuda"""
     keyboard = [
-        [InlineKeyboardButton("📋 Como Funciona", callback_data='how_it_works')],
-        [InlineKeyboardButton("⏱️ Prazos", callback_data='deadlines')],
-        [InlineKeyboardButton("💳 Pagamentos", callback_data='payments')],
-        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main')]
+        [InlineKeyboardButton("📋 Como Funciona", callback_data='how_it_works', style="primary")],
+        [InlineKeyboardButton("⏱️ Prazos", callback_data='deadlines', style="success")],
+        [InlineKeyboardButton("💳 Pagamentos", callback_data='payments', style="primary")],
+        [InlineKeyboardButton("🏠 Voltar", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def help_back_keyboard():
     """Teclado para voltar ao menu de ajuda"""
     keyboard = [
-        [InlineKeyboardButton("🏡 Retornar", callback_data='help_menu')],
-        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main')]
+        [InlineKeyboardButton("🏡 Retornar", callback_data='help_menu', style="primary")],
+        [InlineKeyboardButton("🏠 Início", callback_data='back_to_main', style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -239,7 +239,7 @@ def out_of_hours_keyboard(from_screen='main'):
         back_text = "🏠 Início"
     
     keyboard = [
-        [InlineKeyboardButton("⏰ Ver Horários", callback_data='business_hours')],
-        [InlineKeyboardButton(back_text, callback_data=back_callback)]
+        [InlineKeyboardButton("⏰ Ver Horários", callback_data='business_hours', style="primary")],
+        [InlineKeyboardButton(back_text, callback_data=back_callback, style="danger")]
     ]
     return InlineKeyboardMarkup(keyboard)
