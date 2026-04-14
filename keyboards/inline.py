@@ -239,7 +239,7 @@ def out_of_hours_keyboard(from_screen='main'):
         back_text = "🏠 Início"
     
     keyboard = [
-        [InlineKeyboardButton("⏰ Ver Horários", callback_data='business_hours', style="primary")],
-        [InlineKeyboardButton(back_text, callback_data=back_callback, style="danger")]
+        [InlineKeyboardButton("⏰ Ver Horários", callback_data='business_hours')],
+        [InlineKeyboardButton(back_text, callback_data=back_callback)]
     ]
     return InlineKeyboardMarkup(keyboard)
