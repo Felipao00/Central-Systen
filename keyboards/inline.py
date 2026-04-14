@@ -1,5 +1,4 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.constants import InlineKeyboardButtonStyle
 from config import GHOST_USERNAME, TIO_DUCK_USERNAME, GHOST_SERVICES
 
 def main_menu_keyboard():
