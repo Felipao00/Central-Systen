@@ -1,4 +1,5 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.constants import InlineKeyboardButtonStyle
 from config import GHOST_USERNAME, TIO_DUCK_USERNAME, GHOST_SERVICES
 
 def main_menu_keyboard():
@@ -12,7 +13,7 @@ def main_menu_keyboard():
          InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("📖 Regras", callback_data='rules'),
          InlineKeyboardButton("⏰ Horários", callback_data='business_hours'),
-         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu', style=InlineKeyboardButton.Style.SUCCESS)],
+         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu', style=InlineKeyboardButtonStyle.DANGER)],
     ]
     return InlineKeyboardMarkup(keyboard)
 
