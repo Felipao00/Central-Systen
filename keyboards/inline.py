@@ -12,7 +12,7 @@ def main_menu_keyboard():
          InlineKeyboardButton("📲 Recargas", callback_data='recharges')],
         [InlineKeyboardButton("📖 Regras", callback_data='rules'),
          InlineKeyboardButton("⏰ Horários", callback_data='business_hours'),
-         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu', style="danger")]
+         InlineKeyboardButton("❓ Ajuda", callback_data='help_menu')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
