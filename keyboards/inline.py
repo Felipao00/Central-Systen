@@ -171,6 +171,7 @@ def partners_keyboard():
 def help_menu_keyboard():
     """Teclado do menu de ajuda"""
     keyboard = [
+        [InlineKeyboardButton("💥 Canal de Informações", url="https://t.me/centralinfor7", style="success")],
         [InlineKeyboardButton("📋 Como Funciona", callback_data='how_it_works', style="primary")],
         [InlineKeyboardButton("⏱️ Prazos", callback_data='deadlines', style="success")],
         [InlineKeyboardButton("💳 Pagamentos", callback_data='payments', style="primary")],
