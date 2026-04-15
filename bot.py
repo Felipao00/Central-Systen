@@ -1,7 +1,7 @@
 import logging
 import sys
 import asyncio
-from telegram import BotCommand
+from telegram import BotCommand, MenuButtonWebApp, WebAppInfo  # 👈 NOVOS IMPORTS
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler
 from config import BOT_TOKEN
 from handlers import *
@@ -19,11 +19,18 @@ logging.basicConfig(
 )
 
 async def set_bot_commands(application: Application):
-    """Configura o menu de comandos do bot"""
-    commands = [
-        BotCommand("start", "🚀 Iniciar atendimento")
-    ]
-    await application.bot.set_my_commands(commands)
+    """Configura APENAS o botão do Mini App no menu lateral"""
+    
+    # Remove todos os comandos
+    await application.bot.set_my_commands([])
+    
+    # Coloca SOMENTE o botão do Mini App
+    await application.bot.set_chat_menu_button(
+        menu_button=MenuButtonWebApp(
+            text="💥 Central",  # 👈 Texto que aparece no botão
+            web_app=WebAppInfo(url="https://miniappcentral.vercel.app/")  # 👈 COLOQUE SEU LINK AQUI
+        )
+    )
 
 if __name__ == '__main__':
     # Configuração específica para Windows
@@ -89,7 +96,7 @@ if __name__ == '__main__':
     print("="*50)
     print("✅ Bot online e aguardando clientes")
     print("📱 Envie /start no Telegram para testar")
-    print("⚡ Menu de comandos configurado!")
+    print("🛍️ Botão do Mini App configurado!")
     print("⏹️  Pressione Ctrl+C para parar\n")
     
     # Iniciar o bot
