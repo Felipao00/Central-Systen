@@ -27,7 +27,7 @@ async def set_bot_commands(application: Application):
     # Coloca SOMENTE o botão do Mini App
     await application.bot.set_chat_menu_button(
         menu_button=MenuButtonWebApp(
-            text="💥 Central",  # 👈 Texto que aparece no botão
+            text="🚨 Central",  # 👈 Texto que aparece no botão
             web_app=WebAppInfo(url="https://miniappcentral.vercel.app/")  # 👈 COLOQUE SEU LINK AQUI
         )
     )
