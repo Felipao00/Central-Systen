@@ -8,8 +8,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     first_name = user.first_name or "Visitante"
 
-    # 👇 ADICIONE ESTA LINHA
-    await update.message.set_reaction(reaction="👋")
+    # Método alternativo - compatível com todas as versões
+    await context.bot.set_message_reaction(
+        chat_id=update.effective_chat.id,
+        message_id=update.message.message_id,
+        reaction=[{"type": "emoji", "emoji": "👋"}]
+    )
     
     await update.message.reply_text(
         text=WELCOME_MESSAGE.format(first_name=first_name),
