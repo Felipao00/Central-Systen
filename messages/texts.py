@@ -545,7 +545,7 @@ REQUEST_FF_ACCOUNT_MESSAGE = """
 ⚡ <i>Entrega imediata após confirmação do pagamento!</i>
 🛡️ <i>Garantia de 3 dias contra recuperação!</i>
 
-👇 <b>Clique abaixo para falar com Tio Duck:</b>
+👇 <b>Clique abaixo para falar com nosso Especialista:</b>
 """
 
 FAKE_NOTES_MESSAGE = """
@@ -582,8 +582,6 @@ FAKE_NOTES_MESSAGE = """
 4️⃣ Fale com o especialista
 5️⃣ Realize o pagamento
 6️⃣ Receba seu pedido discretamente</blockquote>
-
-<blockquote><i>👤 Especialista responsável: GHOST</i></blockquote>
 
 👇 <i>Escolha uma opção abaixo:</i>
 """
