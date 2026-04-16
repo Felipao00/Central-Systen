@@ -2,9 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from keyboards.inline import *
 from messages.texts import *
-from config import GHOST_SERVICES, TIO_DUCK_SERVICES
-from config import GHOST_SERVICES, TIO_DUCK_SERVICES, CANAL_LINK  # 👈 Adicione CANAL_LINK aqui
-from utils import is_business_hours, get_business_hours_message, get_current_time_brasilia, get_current_day_brasilia
+from config import GHOST_SERVICES, TIO_DUCK_SERVICES, CANAL_LINK
 
 async def handle_service_acquired(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para o botão SERVIÇO ADQUIRIDO"""
@@ -40,42 +38,26 @@ async def handle_cards(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def handle_service_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para seleção de serviço específico - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para seleção de serviço específico"""
     query = update.callback_query
     await query.answer()
     
     service = query.data.replace('service_', '')
     context.user_data['selected_service'] = service
     
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('consultas'),
-            parse_mode='HTML'
-        )
-        return
+    user = query.from_user
+    user_id = user.id
+    username = user.username
+    first_name = user.first_name
     
-    # Só chega aqui se ESTIVER no horário
     if service in GHOST_SERVICES:
         message = ghost_specialist_message(service)
-        keyboard = specialist_keyboard('ghost', service, from_screen='consultas')
+        keyboard = specialist_keyboard('ghost', service, from_screen='consultas',
+                                       user_id=user_id, username=username, first_name=first_name)
     elif service in TIO_DUCK_SERVICES:
         message = tio_duck_specialist_message(service)
-        keyboard = specialist_keyboard('tio_duck', service, from_screen='consultas')
+        keyboard = specialist_keyboard('tio_duck', service, from_screen='consultas',
+                                       user_id=user_id, username=username, first_name=first_name)
     else:
         return
     
@@ -86,42 +68,26 @@ async def handle_service_selection(update: Update, context: ContextTypes.DEFAULT
     )
 
 async def handle_card_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para seleção de tipo de cartão - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para seleção de tipo de cartão"""
     query = update.callback_query
     await query.answer()
     
     card_type = "Info CC S/Verificação" if query.data == 'card_no_verification' else "Info CC Verificado"
     context.user_data['selected_service'] = card_type
     
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('cards'),
-            parse_mode='HTML'
-        )
-        return
+    user = query.from_user
+    user_id = user.id
+    username = user.username
+    first_name = user.first_name
     
-    # Só chega aqui se ESTIVER no horário
     if card_type == "Info CC Verificado":
         message = ghost_specialist_message(card_type)
-        keyboard = specialist_keyboard('ghost', card_type, from_screen='cards')
+        keyboard = specialist_keyboard('ghost', card_type, from_screen='cards',
+                                       user_id=user_id, username=username, first_name=first_name)
     else:
         message = tio_duck_specialist_message(card_type)
-        keyboard = specialist_keyboard('tio_duck', card_type, from_screen='cards')
+        keyboard = specialist_keyboard('tio_duck', card_type, from_screen='cards',
+                                       user_id=user_id, username=username, first_name=first_name)
     
     await query.edit_message_text(
         text=message,
@@ -248,7 +214,7 @@ async def handle_rules(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def handle_business_hours(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para o botão HORÁRIOS"""
+    """Handler para o botão HORÁRIOS (apenas informativo)"""
     query = update.callback_query
     await query.answer()
     
@@ -274,36 +240,18 @@ async def handle_recharges(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para seleção de operadora de recarga - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para seleção de operadora de recarga"""
     query = update.callback_query
     await query.answer()
     
     operator = query.data.replace('recharge_', '')
     context.user_data['selected_service'] = f"RECARGA {operator}"
     
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('recharges'),
-            parse_mode='HTML'
-        )
-        return
+    user = query.from_user
+    user_id = user.id
+    username = user.username
+    first_name = user.first_name
     
-    # Só chega aqui se ESTIVER no horário
     from messages.texts import claro_message, tim_message, vivo_message
     
     if operator == 'CLARO':
@@ -315,7 +263,8 @@ async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAUL
     else:
         return
     
-    keyboard = recharge_specialist_keyboard(operator, from_screen='recharges')
+    keyboard = recharge_specialist_keyboard(operator, from_screen='recharges',
+                                            user_id=user_id, username=username, first_name=first_name)
     
     await query.edit_message_text(
         text=message,
@@ -323,72 +272,22 @@ async def handle_recharge_selection(update: Update, context: ContextTypes.DEFAUL
         parse_mode='HTML'
     )
 
-# Adicione no final do arquivo:
-
 async def handle_bot_vip(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para o botão BOT VIP - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para o botão BOT VIP"""
     query = update.callback_query
     await query.answer()
     
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('main'),  # Volta para o menu principal
-            parse_mode='HTML'
-        )
-        return
-    
-    # Só chega aqui se ESTIVER no horário
     await query.edit_message_text(
         text=BOT_VIP_MESSAGE,
-        reply_markup=bot_vip_keyboard(),  # Este teclado tem o botão "SOLICITAR AGORA"
+        reply_markup=bot_vip_keyboard(),
         parse_mode='HTML'
     )
 
-# Remova as funções: handle_bot_models, handle_model_vip_group, handle_model_sales, handle_model_subscription
-
 async def handle_request_quote(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para SOLICITAR ORÇAMENTO - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para SOLICITAR ORÇAMENTO"""
     query = update.callback_query
     await query.answer()
     
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('bot_vip'),  # 👈 Volta para BOT VIP
-            parse_mode='HTML'
-        )
-        return
-    
-    # Só chega aqui se ESTIVER no horário
     keyboard = [
         [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
         [InlineKeyboardButton("🏠 Início", callback_data='bot_vip')]
@@ -399,8 +298,6 @@ async def handle_request_quote(update: Update, context: ContextTypes.DEFAULT_TYP
         reply_markup=InlineKeyboardMarkup(keyboard),
         parse_mode='HTML'
     )
-
-# Adicione no final do arquivo:
 
 async def handle_ff_accounts(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para o botão CONTAS FF"""
@@ -436,34 +333,9 @@ async def handle_ff_prices(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def handle_request_ff_account(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para SOLICITAR CONTA FF - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para SOLICITAR CONTA FF"""
     query = update.callback_query
     await query.answer()
-    
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('ff_accounts'),
-            parse_mode='HTML'
-        )
-        return
-    
-    # Link do Tio Duck (ou canal)
-    from config import CANAL_LINK
     
     keyboard = [
         [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
@@ -510,33 +382,9 @@ async def handle_fake_notes_info(update: Update, context: ContextTypes.DEFAULT_T
     )
 
 async def handle_request_fake_notes(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handler para SOLICITAR NOTAS - COM VERIFICAÇÃO DE HORÁRIO"""
+    """Handler para SOLICITAR NOTAS"""
     query = update.callback_query
     await query.answer()
-    
-    # Verifica se está no horário de funcionamento
-    if not is_business_hours():
-        from messages.texts import OUT_OF_HOURS_MESSAGE
-        from keyboards.inline import out_of_hours_keyboard
-        
-        current_time = get_current_time_brasilia()
-        current_day = get_current_day_brasilia()
-        business_hours = get_business_hours_message()
-        
-        message = OUT_OF_HOURS_MESSAGE.format(
-            current_time=current_time,
-            current_day=current_day,
-            business_hours=business_hours
-        )
-        
-        await query.edit_message_text(
-            text=message,
-            reply_markup=out_of_hours_keyboard('fake_notes'),
-            parse_mode='HTML'
-        )
-        return
-    
-    from config import CANAL_LINK
     
     keyboard = [
         [InlineKeyboardButton("💬 Falar com Especialista", url=CANAL_LINK)],
