@@ -687,8 +687,7 @@ REQUEST_FAKE_NOTES_MESSAGE = """
 ━━━━━━━━━━━━━━━━━━
 📋 <b>ENVIE NO CHAT DO CANAL:</b>
 
-<blockquote>👤 <b>Especialista:</b> <i>GHOST</i>
-🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
+<blockquote>🆔 <b>Seu ID:</b> <i>@username ou ID numérico</i>
 💵 <b>Serviço:</b> <i>NOTAS FALSAS</i>
 📝 <b>Informe:</b>
   • Qual valor de nota deseja
@@ -700,5 +699,5 @@ REQUEST_FAKE_NOTES_MESSAGE = """
 🛡️ <i>Garantia de qualidade AAA+!</i>
 📮 <i>Envio discreto e seguro!</i>
 
-👇 <b>Clique abaixo para falar com Ghost:</b>
+👇 <b>Clique abaixo para falar com nosso Especialista:</b>
 """
