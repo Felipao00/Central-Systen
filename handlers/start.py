@@ -7,6 +7,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handler para o comando /start"""
     user = update.effective_user
     first_name = user.first_name or "Visitante"
+
+    # Reage à mensagem com um emoji
+    await update.message.set_reaction(reaction="👋")
     
     await update.message.reply_text(
         text=WELCOME_MESSAGE.format(first_name=first_name),
